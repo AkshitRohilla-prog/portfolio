@@ -96,7 +96,7 @@
             <span class="hero__headline hero-in" style="--d:2">Building software. Learning to <span class="accent">secure it.</span></span>
           </h1>
           <p class="hero__tagline hero-in" style="--d:3">Software Engineering <span aria-hidden="true">·</span> IT Security <span aria-hidden="true">·</span> Networking <span aria-hidden="true">·</span> Machine Learning</p>
-          <p class="hero__intro hero-in" style="--d:4">I'm a Software Engineering student in Berlin, learning how attacks and networks work so I can help defend against them.</p>
+          <p class="hero__intro hero-in" style="--d:4">I'm a Software Engineering student living in Berlin and studying in Potsdam, exploring software development, networking and cybersecurity through hands-on projects and continuous learning.</p>
           <div class="hero__actions hero-in" style="--d:5">
             <a class="btn btn--primary" href="#projects">View projects
               <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
@@ -173,7 +173,12 @@
         <header class="section__head reveal">
           <p class="eyebrow">Skills</p>
           <h2 class="section__title" id="skills-title">What I work with, and where I used it.</h2>
-          <p class="section__sub">Each skill is marked Project, Coursework or Self-study. Select one to see where I used it.</p>
+          <p class="section__sub">Each skill shows where it comes from. Select one for a short note.</p>
+          <ul class="skills-legend" aria-label="Label meanings">
+            <li><span class="chip__src">Project</span> used in a project</li>
+            <li><span class="chip__src">Coursework</span> from university modules</li>
+            <li><span class="chip__src">Self-study</span> learned on my own</li>
+          </ul>
         </header>
 
         <div class="skills__grid">
@@ -183,7 +188,7 @@
               <li><button class="chip" type="button" aria-pressed="false" data-skill="python"><span class="chip__name">Python</span><span class="chip__src"><span class="sr-only">, from </span>Project</span></button></li>
               <li><button class="chip" type="button" aria-pressed="false" data-skill="flask"><span class="chip__name">Flask</span><span class="chip__src"><span class="sr-only">, from </span>Project</span></button></li>
               <li><button class="chip" type="button" aria-pressed="false" data-skill="c"><span class="chip__name">C</span><span class="chip__src"><span class="sr-only">, from </span>Coursework</span></button></li>
-              <li><button class="chip" type="button" aria-pressed="false" data-skill="c"><span class="chip__name">C++</span><span class="chip__src"><span class="sr-only">, from </span>Coursework</span></button></li>
+              <li><button class="chip" type="button" aria-pressed="false" data-skill="cpp"><span class="chip__name">C++</span><span class="chip__src"><span class="sr-only">, from </span>Coursework</span></button></li>
               <li><button class="chip" type="button" aria-pressed="false" data-skill="html"><span class="chip__name">HTML</span><span class="chip__src"><span class="sr-only">, from </span>Project</span></button></li>
               <li><button class="chip" type="button" aria-pressed="false" data-skill="css"><span class="chip__name">CSS</span><span class="chip__src"><span class="sr-only">, from </span>Project</span></button></li>
             </ul>
@@ -191,11 +196,11 @@
             <!-- Where each skill was used: shown as a list without JavaScript, and one at a time when a chip is selected. -->
             <ul class="skill-notes" role="list">
               <li data-note-for="python"><span class="skill-notes__name">Python:</span> Road Issues Detection and the N-Queens benchmark.</li>
-              <li data-note-for="flask"><span class="skill-notes__name">Flask:</span> Student Community Portal.</li>
-              <li data-note-for="c"><span class="skill-notes__name">C:</span> University modules.</li>
-              <li data-note-for="c"><span class="skill-notes__name">C++:</span> University modules.</li>
-              <li data-note-for="html"><span class="skill-notes__name">HTML:</span> Student Community Portal.</li>
-              <li data-note-for="css"><span class="skill-notes__name">CSS:</span> Student Community Portal.</li>
+              <li data-note-for="flask"><span class="skill-notes__name">Flask:</span> Framework behind the Student Community Portal.</li>
+              <li data-note-for="c"><span class="skill-notes__name">C:</span> Learned in university modules.</li>
+              <li data-note-for="cpp"><span class="skill-notes__name">C++:</span> Covered in university coursework.</li>
+              <li data-note-for="html"><span class="skill-notes__name">HTML:</span> Page structure for the Student Community Portal frontend.</li>
+              <li data-note-for="css"><span class="skill-notes__name">CSS:</span> Styling for the Student Community Portal frontend.</li>
             </ul>
           </article>
 
@@ -211,11 +216,11 @@
             <p class="skill-group__note" aria-live="polite">All used in Road Issues Detection.</p>
             <!-- Where each skill was used: shown as a list without JavaScript, and one at a time when a chip is selected. -->
             <ul class="skill-notes" role="list">
-              <li data-note-for="pytorch"><span class="skill-notes__name">PyTorch:</span> Road Issues Detection.</li>
-              <li data-note-for="cnns"><span class="skill-notes__name">CNNs:</span> Road Issues Detection.</li>
-              <li data-note-for="transfer-learning"><span class="skill-notes__name">Transfer learning:</span> Road Issues Detection.</li>
-              <li data-note-for="model-evaluation"><span class="skill-notes__name">Model evaluation:</span> Road Issues Detection.</li>
-              <li data-note-for="streamlit"><span class="skill-notes__name">Streamlit:</span> Road Issues Detection prototype.</li>
+              <li data-note-for="pytorch"><span class="skill-notes__name">PyTorch:</span> Trained the Road Issues Detection models.</li>
+              <li data-note-for="cnns"><span class="skill-notes__name">CNNs:</span> Built a custom CNN for road images.</li>
+              <li data-note-for="transfer-learning"><span class="skill-notes__name">Transfer learning:</span> Fine-tuned EfficientNetV2-S and ConvNeXt-Tiny.</li>
+              <li data-note-for="model-evaluation"><span class="skill-notes__name">Model evaluation:</span> Checked model focus with Grad-CAM and SHAP.</li>
+              <li data-note-for="streamlit"><span class="skill-notes__name">Streamlit:</span> Prototype app for Road Issues Detection.</li>
             </ul>
           </article>
 
@@ -230,10 +235,10 @@
             <p class="skill-group__note" aria-live="polite">Learned in modules and on my own.</p>
             <!-- Where each skill was used: shown as a list without JavaScript, and one at a time when a chip is selected. -->
             <ul class="skill-notes" role="list">
-              <li data-note-for="tcp-ip"><span class="skill-notes__name">TCP/IP:</span> Modules and self-study.</li>
-              <li data-note-for="osi-model"><span class="skill-notes__name">OSI model:</span> Modules and self-study.</li>
-              <li data-note-for="ipv4"><span class="skill-notes__name">IPv4:</span> Modules and self-study.</li>
-              <li data-note-for="ipv6"><span class="skill-notes__name">IPv6:</span> Modules and self-study.</li>
+              <li data-note-for="tcp-ip"><span class="skill-notes__name">TCP/IP:</span> How data travels between hosts.</li>
+              <li data-note-for="osi-model"><span class="skill-notes__name">OSI model:</span> The seven-layer view of network communication.</li>
+              <li data-note-for="ipv4"><span class="skill-notes__name">IPv4:</span> Classic 32-bit addressing.</li>
+              <li data-note-for="ipv6"><span class="skill-notes__name">IPv6:</span> The newer 128-bit addressing scheme.</li>
             </ul>
           </article>
 
@@ -247,9 +252,9 @@
             <p class="skill-group__note" aria-live="polite">Fundamentals from modules and hands-on practice.</p>
             <!-- Where each skill was used: shown as a list without JavaScript, and one at a time when a chip is selected. -->
             <ul class="skill-notes" role="list">
-              <li data-note-for="security-fundamentals"><span class="skill-notes__name">Security fundamentals:</span> Modules and hands-on practice.</li>
-              <li data-note-for="ethical-hacking-fundamentals"><span class="skill-notes__name">Ethical hacking fundamentals:</span> Modules and hands-on practice.</li>
-              <li data-note-for="common-cyberattacks"><span class="skill-notes__name">Common cyberattacks:</span> Modules and hands-on practice.</li>
+              <li data-note-for="security-fundamentals"><span class="skill-notes__name">Security fundamentals:</span> Core ideas from the IT Security module.</li>
+              <li data-note-for="ethical-hacking-fundamentals"><span class="skill-notes__name">Ethical hacking fundamentals:</span> Practised through wargame exercises.</li>
+              <li data-note-for="common-cyberattacks"><span class="skill-notes__name">Common cyberattacks:</span> How common attacks work and how to defend against them.</li>
             </ul>
           </article>
 
@@ -269,18 +274,18 @@
             <ul class="skill-notes" role="list">
               <li data-note-for="linux"><span class="skill-notes__name">Linux:</span> Command-line practice.</li>
               <li data-note-for="windows"><span class="skill-notes__name">Windows:</span> Everyday working environment.</li>
-              <li data-note-for="git-github"><span class="skill-notes__name">Git/GitHub:</span> Code for Road Issues Detection and Neighborly.</li>
+              <li data-note-for="git-github"><span class="skill-notes__name">Git/GitHub:</span> Used for version control and publishing my projects.</li>
               <li data-note-for="vs-code"><span class="skill-notes__name">VS Code:</span> Everyday code editor.</li>
               <li data-note-for="jira"><span class="skill-notes__name">Jira:</span> Sprint tracking in the Student Community Portal.</li>
               <li data-note-for="kaggle"><span class="skill-notes__name">Kaggle:</span> Used for machine learning work.</li>
-              <li data-note-for="latex-overleaf"><span class="skill-notes__name">LaTeX/Overleaf:</span> The Road Issues Detection report.</li>
+              <li data-note-for="latex-overleaf"><span class="skill-notes__name">LaTeX/Overleaf:</span> Wrote the Road Issues Detection report.</li>
             </ul>
           </article>
         </div>
 
         <p class="learning reveal">
           <span class="learning__label">Currently learning</span>
-          <span>Linux, networking and Python, with OverTheWire wargames for introductory security exercises.</span>
+          <span>Linux, networking and Python.</span>
         </p>
       </div>
     </section>
@@ -376,7 +381,7 @@
           </article>
 
           <!-- Student Community Portal (private: no image unless assets/screenshots/student-portal.webp exists) -->
-          <article class="card project project--compact reveal" aria-labelledby="p-portal"
+          <article class="card project project--compact project--solo reveal" aria-labelledby="p-portal"
                    data-auto-shot="assets/screenshots/student-portal.webp"
                    data-auto-alt="Screenshot of the Student Community Portal">
             <span class="project__icon" aria-hidden="true">
@@ -402,14 +407,16 @@
             </div>
           </article>
 
-          <!-- N-Queens (no image unless assets/screenshots/n-queens.webp exists) -->
-          <article class="card project project--compact reveal" aria-labelledby="p-nqueens"
+          <!-- N-Queens: inline SVG board (one valid 8-queens placement). If assets/screenshots/n-queens.webp
+               is added, js/main.js shows that real image in place of the diagram. -->
+          <article class="card project project--wide reveal" aria-labelledby="p-nqueens"
                    data-auto-shot="assets/screenshots/n-queens.webp"
                    data-auto-alt="N-Queens algorithm benchmark results">
-            <span class="project__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" class="icon"><path d="M4 4h16v16H4zM4 12h16M12 4v16"/><circle cx="8" cy="8" r="1.4"/><circle cx="16" cy="16" r="1.4"/></svg>
-            </span>
-            <div class="project__body">
+            <figure class="project__media project__media--figure">
+              <svg class="nq-board" viewBox="0 0 320 320" role="img" aria-labelledby="nq-cap"><g><rect class="nq-a" x="0" y="0" width="40" height="40"/><rect class="nq-b" x="40" y="0" width="40" height="40"/><rect class="nq-a" x="80" y="0" width="40" height="40"/><rect class="nq-b" x="120" y="0" width="40" height="40"/><rect class="nq-a" x="160" y="0" width="40" height="40"/><rect class="nq-b" x="200" y="0" width="40" height="40"/><rect class="nq-a" x="240" y="0" width="40" height="40"/><rect class="nq-b" x="280" y="0" width="40" height="40"/><rect class="nq-b" x="0" y="40" width="40" height="40"/><rect class="nq-a" x="40" y="40" width="40" height="40"/><rect class="nq-b" x="80" y="40" width="40" height="40"/><rect class="nq-a" x="120" y="40" width="40" height="40"/><rect class="nq-b" x="160" y="40" width="40" height="40"/><rect class="nq-a" x="200" y="40" width="40" height="40"/><rect class="nq-b" x="240" y="40" width="40" height="40"/><rect class="nq-a" x="280" y="40" width="40" height="40"/><rect class="nq-a" x="0" y="80" width="40" height="40"/><rect class="nq-b" x="40" y="80" width="40" height="40"/><rect class="nq-a" x="80" y="80" width="40" height="40"/><rect class="nq-b" x="120" y="80" width="40" height="40"/><rect class="nq-a" x="160" y="80" width="40" height="40"/><rect class="nq-b" x="200" y="80" width="40" height="40"/><rect class="nq-a" x="240" y="80" width="40" height="40"/><rect class="nq-b" x="280" y="80" width="40" height="40"/><rect class="nq-b" x="0" y="120" width="40" height="40"/><rect class="nq-a" x="40" y="120" width="40" height="40"/><rect class="nq-b" x="80" y="120" width="40" height="40"/><rect class="nq-a" x="120" y="120" width="40" height="40"/><rect class="nq-b" x="160" y="120" width="40" height="40"/><rect class="nq-a" x="200" y="120" width="40" height="40"/><rect class="nq-b" x="240" y="120" width="40" height="40"/><rect class="nq-a" x="280" y="120" width="40" height="40"/><rect class="nq-a" x="0" y="160" width="40" height="40"/><rect class="nq-b" x="40" y="160" width="40" height="40"/><rect class="nq-a" x="80" y="160" width="40" height="40"/><rect class="nq-b" x="120" y="160" width="40" height="40"/><rect class="nq-a" x="160" y="160" width="40" height="40"/><rect class="nq-b" x="200" y="160" width="40" height="40"/><rect class="nq-a" x="240" y="160" width="40" height="40"/><rect class="nq-b" x="280" y="160" width="40" height="40"/><rect class="nq-b" x="0" y="200" width="40" height="40"/><rect class="nq-a" x="40" y="200" width="40" height="40"/><rect class="nq-b" x="80" y="200" width="40" height="40"/><rect class="nq-a" x="120" y="200" width="40" height="40"/><rect class="nq-b" x="160" y="200" width="40" height="40"/><rect class="nq-a" x="200" y="200" width="40" height="40"/><rect class="nq-b" x="240" y="200" width="40" height="40"/><rect class="nq-a" x="280" y="200" width="40" height="40"/><rect class="nq-a" x="0" y="240" width="40" height="40"/><rect class="nq-b" x="40" y="240" width="40" height="40"/><rect class="nq-a" x="80" y="240" width="40" height="40"/><rect class="nq-b" x="120" y="240" width="40" height="40"/><rect class="nq-a" x="160" y="240" width="40" height="40"/><rect class="nq-b" x="200" y="240" width="40" height="40"/><rect class="nq-a" x="240" y="240" width="40" height="40"/><rect class="nq-b" x="280" y="240" width="40" height="40"/><rect class="nq-b" x="0" y="280" width="40" height="40"/><rect class="nq-a" x="40" y="280" width="40" height="40"/><rect class="nq-b" x="80" y="280" width="40" height="40"/><rect class="nq-a" x="120" y="280" width="40" height="40"/><rect class="nq-b" x="160" y="280" width="40" height="40"/><rect class="nq-a" x="200" y="280" width="40" height="40"/><rect class="nq-b" x="240" y="280" width="40" height="40"/><rect class="nq-a" x="280" y="280" width="40" height="40"/></g><g><g class="nq-q" transform="translate(20 20)"><circle r="13"/><path d="M-7 4h14l2-9-5 4-4-7-4 7-5-4z"/></g><g class="nq-q" transform="translate(180 60)"><circle r="13"/><path d="M-7 4h14l2-9-5 4-4-7-4 7-5-4z"/></g><g class="nq-q" transform="translate(300 100)"><circle r="13"/><path d="M-7 4h14l2-9-5 4-4-7-4 7-5-4z"/></g><g class="nq-q" transform="translate(220 140)"><circle r="13"/><path d="M-7 4h14l2-9-5 4-4-7-4 7-5-4z"/></g><g class="nq-q" transform="translate(100 180)"><circle r="13"/><path d="M-7 4h14l2-9-5 4-4-7-4 7-5-4z"/></g><g class="nq-q" transform="translate(260 220)"><circle r="13"/><path d="M-7 4h14l2-9-5 4-4-7-4 7-5-4z"/></g><g class="nq-q" transform="translate(60 260)"><circle r="13"/><path d="M-7 4h14l2-9-5 4-4-7-4 7-5-4z"/></g><g class="nq-q" transform="translate(140 300)"><circle r="13"/><path d="M-7 4h14l2-9-5 4-4-7-4 7-5-4z"/></g></g><rect class="nq-frame" x="0.5" y="0.5" width="319" height="319"/></svg>
+              <figcaption id="nq-cap">Illustration of one valid solution</figcaption>
+            </figure>
+          <div class="project__body">
               <p class="project__meta"><span class="label">University</span><span>Supervised by Prof. Raja Hashim Ali</span></p>
               <h4 class="project__title" id="p-nqueens">N-Queens: Algorithm Benchmark</h4>
               <p class="project__desc">A Python benchmark of four search algorithms on the <span class="nowrap">N-Queens</span> problem.</p>
@@ -468,6 +475,7 @@
     </section>
 
     <!-- ============ JOURNEY ============ -->
+    <!-- Four groups. Only March 2025 and the degree dates are real dates; everything else is undated on purpose. -->
     <section class="section journey" id="journey" aria-labelledby="journey-title">
       <div class="container">
         <header class="section__head reveal">
@@ -475,80 +483,54 @@
           <h2 class="section__title" id="journey-title">How I've been learning.</h2>
         </header>
 
-        <div class="journey__layout">
-          <article class="card edu reveal" aria-labelledby="edu-title">
-            <p class="edu__date">March 2025 to February 2028 (expected)</p>
-            <h3 class="edu__title" id="edu-title">BSc Software Engineering</h3>
-            <p class="edu__school">University of Europe for Applied Sciences, Potsdam</p>
-            <div class="edu__block">
-              <h4 class="edu__label">Modules</h4>
-              <ul class="tags tags--quiet">
-                <li>Software Engineering</li><li>Machine Learning</li><li>IT Security</li><li>Operating Systems</li><li>IT Platforms</li><li>Cloud Computing</li><li>Software Quality Assurance</li>
-              </ul>
-            </div>
-            <div class="edu__block">
-              <h4 class="edu__label">Languages</h4>
-              <ul class="langs">
-                <li><span>English</span><span class="langs__lvl">C2</span></li>
-                <li><span>German</span><span class="langs__lvl">A1</span></li>
-              </ul>
-            </div>
-          </article>
-
-          <ol class="timeline" aria-label="Learning milestones, in order">
-            <li class="tl tl--start reveal">
-              <span class="tl__dot" aria-hidden="true"></span>
-              <div class="tl__card">
-                <p class="tl__when">March 2025</p>
-                <p class="tl__what">Started the BSc in Software Engineering</p>
-              </div>
-            </li>
-            <li class="tl reveal">
-              <span class="tl__dot" aria-hidden="true"></span>
-              <div class="tl__card">
-                <p class="tl__kind">University project</p>
-                <p class="tl__what">Built the frontend of the Student Community Portal in an Agile team</p>
-              </div>
-            </li>
-            <li class="tl reveal">
-              <span class="tl__dot" aria-hidden="true"></span>
-              <div class="tl__card">
-                <p class="tl__kind">University project</p>
-                <p class="tl__what">Completed the N-Queens algorithm benchmark with a supervising professor</p>
-              </div>
-            </li>
-            <li class="tl reveal">
-              <span class="tl__dot" aria-hidden="true"></span>
-              <div class="tl__card">
-                <p class="tl__kind">University project</p>
-                <p class="tl__what">Built and deployed the Road Issues Detection project</p>
-              </div>
-            </li>
-            <li class="tl reveal">
-              <span class="tl__dot" aria-hidden="true"></span>
-              <div class="tl__card">
-                <p class="tl__kind">University project</p>
-                <p class="tl__what">Designed and launched Neighborly</p>
-              </div>
-            </li>
-            <li class="tl reveal">
-              <span class="tl__dot" aria-hidden="true"></span>
-              <div class="tl__card">
-                <p class="tl__kind tl__kind--personal">Personal project</p>
-                <p class="tl__what">Built a website for a real business</p>
-              </div>
-            </li>
-            <li class="tl tl--now reveal">
-              <span class="tl__dot" aria-hidden="true"></span>
-              <div class="tl__card">
-                <p class="tl__when">Ongoing</p>
-                <p class="tl__what">Learning and practising</p>
-                <ul class="tl__chips" aria-label="Ongoing learning">
-                  <li>Linux</li><li>Networking</li><li>Python</li><li>OverTheWire wargames</li>
+        <div class="jgroups">
+          <!-- Education -->
+          <section class="jgroup jgroup--edu reveal" aria-labelledby="jg-edu">
+            <h3 class="jgroup__title" id="jg-edu"><span class="jgroup__dot" aria-hidden="true"></span>Education</h3>
+            <article class="card edu" aria-labelledby="edu-title">
+              <p class="edu__date">Started March 2025 · expected February 2028</p>
+              <h4 class="edu__title" id="edu-title">BSc Software Engineering</h4>
+              <p class="edu__school">University of Europe for Applied Sciences, Potsdam</p>
+              <div class="edu__block">
+                <h5 class="edu__label">Modules</h5>
+                <ul class="tags tags--quiet">
+                  <li>Software Engineering</li><li>Machine Learning</li><li>IT Security</li><li>Operating Systems</li><li>IT Platforms</li><li>Cloud Computing</li><li>Software Quality Assurance</li>
                 </ul>
               </div>
-            </li>
-          </ol>
+              <div class="edu__block">
+                <h5 class="edu__label">Languages</h5>
+                <ul class="langs">
+                  <li><span>English</span><span class="langs__lvl">C2</span></li>
+                  <li><span>German</span><span class="langs__lvl">A1</span></li>
+                </ul>
+              </div>
+            </article>
+          </section>
+
+          <!-- University projects -->
+          <section class="jgroup reveal" aria-labelledby="jg-uni">
+            <h3 class="jgroup__title" id="jg-uni"><span class="jgroup__dot" aria-hidden="true"></span>University projects</h3>
+            <ul class="jlist">
+              <li>Built the frontend of the Student Community Portal in an Agile team</li>
+              <li>Completed the N-Queens algorithm benchmark with a supervising professor</li>
+              <li>Built and deployed the Road Issues Detection project</li>
+              <li>Designed and launched Neighborly</li>
+            </ul>
+          </section>
+
+          <!-- Personal projects -->
+          <section class="jgroup reveal" aria-labelledby="jg-personal">
+            <h3 class="jgroup__title" id="jg-personal"><span class="jgroup__dot" aria-hidden="true"></span>Personal projects</h3>
+            <ul class="jlist">
+              <li>Built a website for a real business</li>
+            </ul>
+          </section>
+
+          <!-- Currently learning -->
+          <section class="jgroup jgroup--now reveal" aria-labelledby="jg-now">
+            <h3 class="jgroup__title" id="jg-now"><span class="jgroup__dot" aria-hidden="true"></span>Currently learning</h3>
+            <p class="jnow">Practising security on OverTheWire wargames alongside my degree.</p>
+          </section>
         </div>
       </div>
     </section>
@@ -601,7 +583,7 @@
 
   <footer class="footer">
     <div class="container footer__inner">
-      <p>Akshit Rohilla <span aria-hidden="true">·</span> Berlin <span aria-hidden="true">·</span> 2026</p>
+      <p>Akshit Rohilla <span aria-hidden="true">·</span> Living in Berlin, studying in Potsdam <span aria-hidden="true">·</span> 2026</p>
       <a class="footer__top" href="#home">Back to top</a>
     </div>
   </footer>

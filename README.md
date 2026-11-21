@@ -68,6 +68,9 @@ Every card follows the same order:
 
 Keep the visible text short and put extra detail inside the `<details>` block.
 
+### N-Queens diagram
+The N-Queens card shows an inline SVG board of one valid 8-queens placement (columns 0, 4, 7, 5, 2, 6, 1, 3 for rows 1 to 8), captioned "Illustration of one valid solution". It uses theme colours, so it works in both themes. If `assets/screenshots/n-queens.webp` is added, that real image replaces the diagram automatically.
+
 ### Edit project text
 All text is in `index.html`. Each project is one `<article class="card project …">`. Edit the description, the "My contribution" box, the `<details>` "Technical detail" block, the tags and the buttons in place. Rules worth keeping: no accuracy numbers, no project counts, no invented details.
 
@@ -84,18 +87,20 @@ Each skill has two parts in the Skills section of `index.html`, joined by the sa
 </ul>
 ```
 
+- **Legend:** the three labels are explained in the `.skills-legend` list above the chips.
+- **Every note must be unique.** No two chips share the same wording.
 - **`chip__src`** is the source label: `Project`, `Coursework`, `Self-study`, or a combination. Leave it out entirely if you don't want a label (Windows and VS Code have none). The chip then keeps even padding.
 - **Notes:** each chip's note is the matching `<li data-note-for="…">` in that group's `skill-notes` list. Without JavaScript the full list is shown. With JavaScript the list is hidden, and selecting a chip shows its note in `skill-group__note`. Keep notes to a few words.
 - **Group summary:** the text in `skill-group__note` is shown before anything is selected.
 - Don't repeat the "Currently learning" line in the notes.
 
 ### Edit the journey
-The timeline in the Journey section is an ordered list:
-- each step is `<li class="tl">`
-- the first step is `tl--start` (March 2025)
-- the last step is `tl--now` ("Ongoing")
+The Journey section has four groups (`.jgroup`):
+- **Education:** the degree card with modules and languages.
+- **University projects** and **Personal projects:** plain `<li>` items in a `.jlist`.
+- **Currently learning:** one short line.
 
-Only March 2025 and the degree dates carry dates. Add new milestones in order, before the `tl--now` item.
+Only March 2025 and the degree dates are real dates. Keep project items undated, and don't repeat the Skills section here.
 
 ### Edit contact links
 The three Contact links are `.contact-link` items: "Email me" (the cyan main action), "Connect on LinkedIn" and "Explore my GitHub". The email address appears as text inside the email link.

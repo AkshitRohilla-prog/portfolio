@@ -144,7 +144,9 @@
       media.appendChild(img);
       var icon = card.querySelector('.project__icon');
       if (icon) icon.remove();
-      card.insertBefore(media, card.firstChild);
+      var existing = card.querySelector('.project__media');
+      if (existing) existing.replaceWith(media); // e.g. the N-Queens diagram gives way to a real image
+      else card.insertBefore(media, card.firstChild);
       card.classList.remove('project--compact');
       card.classList.add('project--wide');
     };
