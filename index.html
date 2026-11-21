@@ -1,0 +1,525 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Akshit Rohilla</title>
+  <meta name="description" content="Akshit Rohilla is a Software Engineering student in Berlin, learning IT security and networking and looking for an internship or working-student role in Germany.">
+  <meta name="author" content="Akshit Rohilla">
+  <meta name="theme-color" content="#050505" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#F4F3F8" media="(prefers-color-scheme: light)">
+  <meta name="color-scheme" content="dark light">
+
+  <!-- Set the theme before first paint so there is no flash of the wrong theme. -->
+  <script>
+    (function () {
+      var d = document.documentElement, t = null;
+      d.classList.remove('no-js'); d.classList.add('js');
+      try { t = localStorage.getItem('theme'); } catch (e) {}
+      if (t !== 'light' && t !== 'dark') {
+        t = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+      }
+      d.setAttribute('data-theme', t);
+    })();
+  </script>
+
+  <!-- TODO(domain): once the final domain is known, add
+       <link rel="canonical" href="https://YOUR-DOMAIN/">
+       and make og:url / og:image / twitter:image absolute (https://YOUR-DOMAIN/assets/og-image.png). -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Akshit Rohilla">
+  <meta property="og:description" content="Building software. Learning to secure it. Software Engineering student in Berlin, open to internships and working-student roles.">
+  <meta property="og:image" content="assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Akshit Rohilla, Building software. Learning to secure it.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Akshit Rohilla">
+  <meta name="twitter:description" content="Building software. Learning to secure it. Software Engineering student in Berlin, open to internships and working-student roles.">
+  <meta name="twitter:image" content="assets/og-image.png">
+
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
+  <link rel="preload" href="assets/fonts/sora-latin-wght.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/dm-sans-latin-wght.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" as="image" href="assets/photo-cutout.webp" type="image/webp" fetchpriority="high">
+  <link rel="stylesheet" href="css/styles.css">
+
+  <script src="js/vendor/gsap.min.js" defer></script>
+  <script src="js/vendor/ScrollTrigger.min.js" defer></script>
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="topbar" id="top">
+    <div class="topbar__inner container">
+      <a class="brand" href="#home" aria-label="Akshit Rohilla, back to top">
+        <span class="brand__mark" aria-hidden="true">AR</span>
+        <span class="brand__name">Akshit Rohilla</span>
+      </a>
+
+      <nav class="nav" aria-label="Main">
+        <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="nav-list" aria-label="Open menu">
+          <svg class="icon icon--menu" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+          <svg class="icon icon--close" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+        </button>
+        <ul class="nav__list" id="nav-list">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#journey">Journey</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <button class="theme-toggle" type="button" aria-label="Switch to light theme" title="Switch theme">
+        <svg class="icon icon--sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M4.6 4.6l1.6 1.6M17.8 17.8l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.6 19.4l1.6-1.6M17.8 6.2l1.6-1.6"/></svg>
+        <svg class="icon icon--moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.2 14.6A8.4 8.4 0 0 1 9.4 3.8a8.4 8.4 0 1 0 10.8 10.8z"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ============ HOME ============ -->
+    <section class="hero" id="home" aria-labelledby="hero-title">
+      <div class="hero__haze" aria-hidden="true"></div>
+      <div class="hero__inner container">
+        <div class="hero__copy">
+          <p class="pill hero-in" style="--d:0"><span class="pill__dot" aria-hidden="true"></span>Open to internships and working-student roles</p>
+          <h1 class="hero__title" id="hero-title">
+            <span class="hero__name hero-in" style="--d:1">Akshit Rohilla</span>
+            <span class="hero__headline hero-in" style="--d:2">Building software. Learning to <span class="accent">secure it.</span></span>
+          </h1>
+          <p class="hero__tagline hero-in" style="--d:3">Software Engineering <span aria-hidden="true">·</span> IT Security <span aria-hidden="true">·</span> Networking <span aria-hidden="true">·</span> Machine Learning</p>
+          <p class="hero__intro hero-in" style="--d:4">I'm a Software Engineering student in Berlin, learning how attacks and networks work so I can help defend against them.</p>
+          <div class="hero__actions hero-in" style="--d:5">
+            <a class="btn btn--primary" href="#projects">View projects
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <a class="btn btn--ghost" href="#contact">Get in touch</a>
+          </div>
+          <ul class="hero__meta hero-in" style="--d:6">
+            <li>
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.3"/></svg>
+              <span><span class="sr-only">Location: </span>Berlin, Germany</span>
+            </li>
+            <li>
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5"/></svg>
+              <a href="mailto:akshitrohilla.in@gmail.com"><span class="sr-only">Email: </span>akshitrohilla.in@gmail.com</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="hero__visual">
+          <div class="stage">
+            <div class="stage__float">
+              <div class="stage__tilt">
+                <div class="layer layer--glow" aria-hidden="true">
+                  <span class="orb orb--a"></span>
+                  <span class="orb orb--b"></span>
+                  <span class="orb orb--c"></span>
+                  <span class="grid-floor"></span>
+                </div>
+                <div class="layer layer--net" aria-hidden="true"></div>
+                <div class="layer layer--ghost" aria-hidden="true">
+                  <img src="assets/photo-cutout.webp" alt="" width="838" height="1200" decoding="async">
+                </div>
+                <div class="layer layer--photo">
+                  <span class="contact-shadow" aria-hidden="true"></span>
+                  <img class="photo-edge" src="assets/photo-cutout.webp" alt="" width="838" height="1200" aria-hidden="true" decoding="async">
+                  <picture>
+                    <source srcset="assets/photo-cutout.webp" type="image/webp">
+                    <img class="photo" src="assets/photo-cutout.png" alt="Portrait of Akshit Rohilla" width="838" height="1200" fetchpriority="high" loading="eager" decoding="async">
+                  </picture>
+                </div>
+                <ul class="layer layer--chips" aria-label="Quick facts">
+                  <li class="float-chip float-chip--a">Berlin, Germany</li>
+                  <li class="float-chip float-chip--b">Linux and networking</li>
+                  <li class="float-chip float-chip--c">Software Engineering</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ABOUT ============ -->
+    <section class="section about" id="about" aria-labelledby="about-title">
+      <div class="container">
+        <header class="section__head reveal">
+          <p class="eyebrow">About</p>
+          <h2 class="section__title" id="about-title">Curious about how things break, <span class="nowrap">and how to protect them.</span></h2>
+        </header>
+        <div class="about__body">
+          <p class="about__lead reveal">I'm Akshit Rohilla, a Software Engineering student at the University of Europe for Applied Sciences in Potsdam, Germany.</p>
+          <div class="about__text">
+            <p class="reveal">My interest in cybersecurity started with curiosity about how cyberattacks work, how networks transmit data through packets, and how digital activities can be traced online. That curiosity led me to explore networking, Linux, programming and cybersecurity fundamentals.</p>
+            <p class="reveal">I'm particularly interested in understanding how vulnerabilities can be exploited and, more importantly, how systems can be protected against them. I'm continuously developing my technical knowledge through hands-on learning and personal projects.</p>
+            <p class="reveal">I'm currently looking for an internship or working-student opportunity where I can apply what I've learned, work on real-world challenges, and grow alongside experienced professionals.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SKILLS ============ -->
+    <section class="section skills" id="skills" aria-labelledby="skills-title">
+      <div class="container">
+        <header class="section__head reveal">
+          <p class="eyebrow">Skills</p>
+          <h2 class="section__title" id="skills-title">What I work with, and where I used it.</h2>
+          <p class="section__sub">Select a skill to see where I used it.</p>
+        </header>
+
+        <div class="skills__grid">
+          <article class="skill-group reveal" aria-labelledby="sg-prog">
+            <h3 class="skill-group__title" id="sg-prog">Programming</h3>
+            <ul class="chips" role="list">
+              <li><button class="chip" type="button" aria-pressed="false" data-note="Python: Road Issues Detection and the N-Queens benchmark.">Python</button></li>
+              <li><button class="chip" type="button" aria-pressed="false" data-note="Flask: the Student Community Portal.">Flask</button></li>
+              <li><button class="chip" type="button" aria-pressed="false" data-note="C: coursework.">C</button></li>
+              <li><button class="chip" type="button" aria-pressed="false" data-note="C++: coursework.">C++</button></li>
+              <li><button class="chip" type="button" aria-pressed="false" data-note="HTML: the Student Community Portal.">HTML</button></li>
+              <li><button class="chip" type="button" aria-pressed="false" data-note="CSS: the Student Community Portal.">CSS</button></li>
+            </ul>
+            <p class="skill-group__note" aria-live="polite">Python: Road Issues Detection and the N-Queens benchmark. Flask, HTML and CSS: Student Community Portal. C and C++: coursework.</p>
+          </article>
+
+          <article class="skill-group reveal" aria-labelledby="sg-ml">
+            <h3 class="skill-group__title" id="sg-ml">Machine learning</h3>
+            <ul class="chips" role="list">
+              <li><button class="chip" type="button" aria-pressed="false" data-note="PyTorch: Road Issues Detection.">PyTorch</button></li>
+              <li><button class="chip" type="button" aria-pressed="false" data-note="CNNs: Road Issues Detection.">CNNs</button></li>
+              <li><button class="chip" type="button" aria-pressed="false" data-note="Transfer learning: Road Issues Detection.">Transfer learning</button></li>
+              <li><button class="chip" type="button" aria-pressed="false" data-note="Model evaluation: Road Issues Detection.">Model evaluation</button></li>
+              <li><button class="chip" type="button" aria-pressed="false" data-note="Streamlit: the Road Issues Detection prototype.">Streamlit</button></li>
+            </ul>
+            <p class="skill-group__note" aria-live="polite">All used in Road Issues Detection.</p>
+          </article>
+
+          <article class="skill-group reveal" aria-labelledby="sg-net">
+            <h3 class="skill-group__title" id="sg-net">Networking</h3>
+            <ul class="chips" role="list">
+              <li><button class="chip" type="button" aria-pressed="false" data-note="TCP/IP: coursework and self-study.">TCP/IP</button></li>
+              <li><button class="chip" type="button" aria-pressed="false" data-note="OSI model: coursework and self-study.">OSI model</button></li>
+              <li><button class="chip" type="button" aria-pressed="false" data-note="IPv4: coursework and self-study.">IPv4</button></li>
+              <li><button class="chip" type="button" aria-pressed="false" data-note="IPv6: coursework and self-study.">IPv6</button></li>
+            </ul>
+            <p class="skill-group__note" aria-live="polite">Coursework and self-study.</p>
+          </article>
+
+          <article class="skill-group reveal" aria-labelledby="sg-sec">
+            <h3 class="skill-group__title" id="sg-sec">Cybersecurity</h3>
+            <ul class="chips" role="list">
+              <li><button class="chip" type="button" aria-pressed="false" data-note="Security fundamentals: coursework and OverTheWire wargames.">Security fundamentals</button></li>
+              <li><button class="chip" type="button" aria-pressed="false" data-note="Ethical hacking fundamentals: coursework and OverTheWire wargames.">Ethical hacking fundamentals</button></li>
+              <li><button class="chip" type="button" aria-pressed="false" data-note="Common cyberattacks: coursework and OverTheWire wargames.">Common cyberattacks</button></li>
+            </ul>
+            <p class="skill-group__note" aria-live="polite">Coursework and OverTheWire wargames.</p>
+          </article>
+
+          <article class="skill-group skill-group--wide reveal" aria-labelledby="sg-tools">
+            <h3 class="skill-group__title" id="sg-tools">Tools</h3>
+            <ul class="chips" role="list">
+              <li><button class="chip" type="button" aria-pressed="false" data-note="Linux: OverTheWire practice.">Linux</button></li>
+              <li><button class="chip" type="button" aria-pressed="false">Windows</button></li>
+              <li><button class="chip" type="button" aria-pressed="false">Git/GitHub</button></li>
+              <li><button class="chip" type="button" aria-pressed="false">VS Code</button></li>
+              <li><button class="chip" type="button" aria-pressed="false" data-note="Jira: sprint tracking in the Student Community Portal.">Jira</button></li>
+              <li><button class="chip" type="button" aria-pressed="false">Kaggle</button></li>
+              <li><button class="chip" type="button" aria-pressed="false" data-note="LaTeX/Overleaf: the Road Issues Detection report.">LaTeX/Overleaf</button></li>
+            </ul>
+            <p class="skill-group__note" aria-live="polite">Linux: OverTheWire practice. Jira: sprint tracking in the Student Community Portal. LaTeX: Road Issues Detection report.</p>
+          </article>
+        </div>
+
+        <p class="learning reveal">
+          <span class="learning__label">Currently learning</span>
+          <span>Linux, networking and Python, plus OverTheWire wargames for command-line practice and introductory security exercises.</span>
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ PROJECTS ============ -->
+    <section class="section projects" id="projects" aria-labelledby="projects-title">
+      <div class="container">
+        <header class="section__head reveal">
+          <p class="eyebrow">Projects</p>
+          <h2 class="section__title" id="projects-title">Things I've built.</h2>
+        </header>
+
+        <h3 class="group-title reveal">University projects</h3>
+        <div class="project-grid">
+
+          <!-- Road Issues Detection -->
+          <article class="card project project--feature reveal" aria-labelledby="p-road">
+            <div class="project__media project__media--empty" data-shot="road-issues">
+              <!-- SCREENSHOT: road-issues -->
+              <div class="media-fallback" aria-hidden="true">
+                <svg viewBox="0 0 24 24" class="icon"><path d="M4 20L9 4M20 20L15 4M12 6v2M12 11v2M12 16v2"/></svg>
+              </div>
+            </div>
+            <div class="project__body">
+              <p class="project__meta"><span class="label">University</span><span>Individual project · Deep learning</span></p>
+              <h4 class="project__title" id="p-road">Road Issues Detection</h4>
+              <p class="project__desc">A deep-learning system that classifies road images into three damage classes (pothole, damaged road, mixed issues), intended to support road inspection.</p>
+              <div class="project__contrib">
+                <p class="contrib__label">My contribution</p>
+                <p>Built entirely on my own, from dataset preparation and training to evaluation, the prototype and the report.</p>
+              </div>
+              <details class="project__more">
+                <summary>Technical detail</summary>
+                <div class="more__body">
+                  <p>A dataset of 4,216 images with a stratified 70/15/15 split and weighted sampling to handle class imbalance. A custom CNN compared with fine-tuned EfficientNetV2-S and ConvNeXt-Tiny in PyTorch. Grad-CAM and SHAP used to check that the model focused on damaged areas. A Streamlit prototype and a full LaTeX research report.</p>
+                  <!-- TODO(review): learning-outcomes wording is a suggestion, please confirm. -->
+                  <p><strong>What I learned:</strong> handling imbalanced data, transfer learning, and checking what a model actually looks at.</p>
+                </div>
+              </details>
+              <ul class="tags" aria-label="Technologies">
+                <li>Python</li><li>PyTorch</li><li>Streamlit</li><li>LaTeX</li>
+              </ul>
+              <div class="project__links">
+                <a class="link-btn" href="https://road-issues-detection-ml-project-9x3honm3mm9sznunnqxwr7.streamlit.app/" target="_blank" rel="noopener">
+                  Live app<span class="sr-only"> for Road Issues Detection (opens in a new tab)</span>
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 5h5v5M19 5l-8 8M18 14v4a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h4"/></svg>
+                </a>
+                <a class="link-btn" href="https://github.com/AkshitRohilla-prog/road-issues-detection-ml-project" target="_blank" rel="noopener">
+                  Code<span class="sr-only"> for Road Issues Detection on GitHub (opens in a new tab)</span>
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 8l-4 4 4 4M15 8l4 4-4 4"/></svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Neighborly -->
+          <article class="card project reveal" aria-labelledby="p-neighborly">
+            <div class="project__media project__media--empty" data-shot="neighborly">
+              <!-- SCREENSHOT: neighborly -->
+              <div class="media-fallback" aria-hidden="true">
+                <svg viewBox="0 0 24 24" class="icon"><path d="M3 11l9-7 9 7M5 10v10h14V10"/></svg>
+              </div>
+            </div>
+            <div class="project__body">
+              <p class="project__meta"><span class="label">University</span><span>GUI Design and Web Optimization</span></p>
+              <h4 class="project__title" id="p-neighborly">Neighborly</h4>
+              <p class="project__desc">A web app where neighbours share leftover food before it spoils. Givers post, takers claim and pick up. Guests can browse; an account is needed to post or claim.</p>
+              <div class="project__contrib">
+                <p class="contrib__label">My contribution</p>
+                <p>Designed and built the app and improved it from interviews and in-class testing.</p>
+              </div>
+              <details class="project__more">
+                <summary>Technical detail</summary>
+                <div class="more__body">
+                  <p>HTML, CSS and JavaScript with Firebase Authentication and Firestore, and an animated 3D home screen.</p>
+                </div>
+              </details>
+              <ul class="tags" aria-label="Technologies">
+                <li>JavaScript</li><li>Firebase</li><li>GitHub Pages</li>
+              </ul>
+              <div class="project__links">
+                <a class="link-btn" href="https://akshitrohilla-prog.github.io/neighborly/" target="_blank" rel="noopener">
+                  Live site<span class="sr-only"> for Neighborly (opens in a new tab)</span>
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 5h5v5M19 5l-8 8M18 14v4a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h4"/></svg>
+                </a>
+                <a class="link-btn" href="https://github.com/AkshitRohilla-prog/neighborly" target="_blank" rel="noopener">
+                  Code<span class="sr-only"> for Neighborly on GitHub (opens in a new tab)</span>
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 8l-4 4 4 4M15 8l4 4-4 4"/></svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Student Community Portal -->
+          <article class="card project reveal" aria-labelledby="p-portal">
+            <div class="project__media project__media--private" data-shot="student-portal">
+              <!-- TODO(screenshot): to show an image here, add assets/screenshots/student-portal.webp (1440 x 900)
+                   and replace this block with the <img> markup used on the Neighborly card. See README. -->
+              <div class="private-panel" aria-hidden="true">
+                <svg viewBox="0 0 24 24" class="icon"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>
+                <span>Private repository</span>
+              </div>
+            </div>
+            <div class="project__body">
+              <p class="project__meta"><span class="label">University</span><span>Team of four · Agile and Frontend Engineering</span></p>
+              <h4 class="project__title" id="p-portal">Student Community Portal</h4>
+              <p class="project__desc">A Flask-based web portal for student communities, built over several sprints.</p>
+              <div class="project__contrib">
+                <p class="contrib__label">My contribution</p>
+                <p>The frontend (HTML, CSS) and Jira sprint tracking and task management.</p>
+              </div>
+              <ul class="tags" aria-label="Technologies">
+                <li>Flask</li><li>HTML</li><li>CSS</li><li>Jira</li>
+              </ul>
+              <p class="project__private">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>
+                Private project. Code available on request.
+              </p>
+            </div>
+          </article>
+
+          <!-- N-Queens -->
+          <article class="card project project--compact reveal" aria-labelledby="p-nqueens">
+            <div class="project__body">
+              <p class="project__meta"><span class="label">University</span><span>Supervised by Prof. Raja Hashim Ali</span></p>
+              <h4 class="project__title" id="p-nqueens">N-Queens: Algorithm Benchmark</h4>
+              <p class="project__desc">Compared depth-first search, hill climbing, simulated annealing and a genetic algorithm on boards from N=10 to N=500, measuring runtime, memory and solution quality in Python. The write-up was co-authored with the supervising professor.</p>
+              <div class="project__contrib">
+                <p class="contrib__label">My contribution</p>
+                <p>Built the benchmark and plotted the results.</p>
+              </div>
+              <ul class="tags" aria-label="Technologies">
+                <li>Python</li><li>Algorithms</li><li>matplotlib</li>
+              </ul>
+            </div>
+            <div class="board" aria-hidden="true"></div>
+          </article>
+        </div>
+
+        <h3 class="group-title reveal">Personal projects</h3>
+        <div class="project-grid project-grid--single">
+          <!-- Shiv Enterprises -->
+          <article class="card project project--wide reveal" aria-labelledby="p-shiv">
+            <div class="project__media project__media--empty" data-shot="shiv-enterprises">
+              <!-- SCREENSHOT: shiv-enterprises -->
+              <div class="media-fallback" aria-hidden="true">
+                <svg viewBox="0 0 24 24" class="icon"><path d="M4 20V9l8-5 8 5v11M9 20v-6h6v6"/></svg>
+              </div>
+            </div>
+            <div class="project__body">
+              <p class="project__meta"><span class="label label--personal">Personal</span><span>Website for a real business</span></p>
+              <h4 class="project__title" id="p-shiv">Shiv Enterprises website</h4>
+              <p class="project__desc">A website for a real dye-chemical trading business in Panipat, India, so customers can find the company and its products, with call and WhatsApp enquiry buttons and a map.</p>
+              <div class="project__contrib">
+                <p class="contrib__label">My contribution</p>
+                <p>Designed and built the site and handed it over to the business.</p>
+              </div>
+              <ul class="tags" aria-label="Technologies">
+                <li>Web design</li><li>Netlify</li>
+              </ul>
+              <div class="project__links">
+                <!-- TODO(link): the Netlify address below returned "Not Found" on 2026-11-21. Confirm the current URL. -->
+                <a class="link-btn" href="https://flourishing-lolly-73c3e4.netlify.app/" target="_blank" rel="noopener">
+                  Live site<span class="sr-only"> for Shiv Enterprises (opens in a new tab)</span>
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 5h5v5M19 5l-8 8M18 14v4a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h4"/></svg>
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ JOURNEY ============ -->
+    <section class="section journey" id="journey" aria-labelledby="journey-title">
+      <div class="container">
+        <header class="section__head reveal">
+          <p class="eyebrow">Journey</p>
+          <h2 class="section__title" id="journey-title">How I've been learning.</h2>
+        </header>
+
+        <div class="journey__layout">
+          <article class="card edu reveal" aria-labelledby="edu-title">
+            <p class="edu__date">March 2025 to February 2028 (expected)</p>
+            <h3 class="edu__title" id="edu-title">BSc Software Engineering</h3>
+            <p class="edu__school">University of Europe for Applied Sciences, Potsdam</p>
+            <div class="edu__block">
+              <p class="contrib__label">Modules</p>
+              <ul class="tags tags--quiet">
+                <li>Software Engineering</li><li>Machine Learning</li><li>IT Security</li><li>Operating Systems</li><li>IT Platforms</li><li>Cloud Computing</li><li>Software Quality Assurance</li>
+              </ul>
+            </div>
+            <div class="edu__block">
+              <p class="contrib__label">Languages</p>
+              <ul class="langs">
+                <li><span>English</span><span class="langs__lvl">C2</span></li>
+                <li><span>German</span><span class="langs__lvl">A1</span></li>
+              </ul>
+            </div>
+          </article>
+
+          <ol class="timeline">
+            <li class="timeline__item reveal">
+              <p class="timeline__when">March 2025</p>
+              <p class="timeline__what">Started the BSc in Software Engineering</p>
+            </li>
+            <li class="timeline__item reveal">
+              <p class="timeline__what">Built the frontend of the Student Community Portal in an Agile team</p>
+            </li>
+            <li class="timeline__item reveal">
+              <p class="timeline__what">Completed the N-Queens algorithm benchmark with a supervising professor</p>
+            </li>
+            <li class="timeline__item reveal">
+              <p class="timeline__what">Built and deployed the Road Issues Detection project</p>
+            </li>
+            <li class="timeline__item reveal">
+              <p class="timeline__what">Designed and launched Neighborly</p>
+            </li>
+            <li class="timeline__item reveal">
+              <p class="timeline__what">Built a website for a real business</p>
+            </li>
+            <li class="timeline__item timeline__item--now reveal">
+              <p class="timeline__when">Ongoing</p>
+              <p class="timeline__what">Practising Linux and security on OverTheWire</p>
+            </li>
+            <li class="timeline__item timeline__item--now reveal">
+              <p class="timeline__when">Ongoing</p>
+              <p class="timeline__what">Learning networking and Python</p>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="section contact" id="contact" aria-labelledby="contact-title">
+      <div class="container">
+        <div class="contact__panel reveal">
+          <p class="eyebrow">Contact</p>
+          <h2 class="section__title" id="contact-title">Looking for a first role? <span class="accent-text">Let's talk.</span></h2>
+          <p class="contact__lead">I'm looking for an internship or working-student position in Germany in IT security, networking, IT or software development.</p>
+
+          <ul class="contact__links">
+            <li>
+              <a class="contact-link" href="mailto:akshitrohilla.in@gmail.com">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5"/></svg>
+                <span class="contact-link__text"><span class="contact-link__label">Email</span><span class="contact-link__value">akshitrohilla.in@gmail.com</span></span>
+              </a>
+            </li>
+            <li>
+              <a class="contact-link" href="https://www.linkedin.com/in/akshit-rohilla-956a173b9" target="_blank" rel="noopener">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 10.5V17M8 7.4v.1M12 17v-6.5M12 13.2c0-1.6 1-2.8 2.4-2.8s2.1 1 2.1 2.7V17"/></svg>
+                <span class="contact-link__text"><span class="contact-link__label">LinkedIn</span><span class="contact-link__value">akshit-rohilla<span class="sr-only"> (opens in a new tab)</span></span></span>
+              </a>
+            </li>
+            <li>
+              <a class="contact-link" href="https://github.com/AkshitRohilla-prog" target="_blank" rel="noopener">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>
+                <span class="contact-link__text"><span class="contact-link__label">GitHub</span><span class="contact-link__value">AkshitRohilla-prog<span class="sr-only"> (opens in a new tab)</span></span></span>
+              </a>
+            </li>
+          </ul>
+
+          <!-- TODO(cv): add assets/Akshit_Rohilla_CV.pdf and set SHOW_CV_BUTTON = true in js/main.js. -->
+          <p class="contact__cv" data-cv hidden>
+            <a class="btn btn--primary" href="assets/Akshit_Rohilla_CV.pdf" download>
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>
+              Download CV (PDF)
+            </a>
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>Akshit Rohilla <span aria-hidden="true">·</span> Berlin <span aria-hidden="true">·</span> 2026</p>
+      <a class="footer__top" href="#home">Back to top</a>
+    </div>
+  </footer>
+</body>
+</html>
