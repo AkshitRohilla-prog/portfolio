@@ -11,7 +11,10 @@ const sharp = require('sharp');
 
 const OUT = path.join(__dirname, '..', 'assets', 'screenshots');
 const TARGETS = [
-  { name: 'road-issues', url: 'https://road-issues-detection-ml-project-9x3honm3mm9sznunnqxwr7.streamlit.app/', streamlit: true },
+  // Road Issues: tabs, upload panel and damage-class cards only. The sidebar and the header
+  // chips show accuracy / F1 figures, which must not appear on the portfolio.
+  { name: 'road-issues', url: 'https://road-issues-detection-ml-project-9x3honm3mm9sznunnqxwr7.streamlit.app/', streamlit: true,
+    viewport: { width: 1440, height: 1400 }, scale: 2, rect: { x: 336, y: 402, width: 1072, height: 670 } },
   { name: 'neighborly', url: 'https://akshitrohilla-prog.github.io/neighborly/' },
   // Shiv: products area only. The About and Contact sections name the owner, and the shop
   // photo in the top area shows tax IDs and a neighbouring sign, so both are left out.
@@ -42,7 +45,7 @@ async function wakeStreamlit(page) {
   const failed = [];
   for (const t of TARGETS.filter(t => !only || t.name === only)) {
     console.log(`> ${t.name}: ${t.url}`);
-    const ctx = await browser.newContext({ viewport: { width: 1440, height: 900 }, deviceScaleFactor: 1, colorScheme: 'light' });
+    const ctx = await browser.newContext({ viewport: t.viewport || { width: 1440, height: 900 }, deviceScaleFactor: t.scale || 1, colorScheme: 'light' });
     const page = await ctx.newPage();
     try {
       const res = await page.goto(t.url, { waitUntil: 'networkidle', timeout: 90000 });
@@ -51,14 +54,16 @@ async function wakeStreamlit(page) {
       await page.evaluate(() => document.fonts && document.fonts.ready);
       await page.waitForTimeout(4000); // let intro animations settle
       let png;
-      if (t.clip) {
+      if (t.rect) {
+        png = await page.screenshot({ type: 'png', clip: t.rect });
+      } else if (t.clip) {
         const top = await page.$eval(t.clip.selector, el => el.getBoundingClientRect().top + window.scrollY);
         png = await page.screenshot({ type: 'png', fullPage: true, clip: { x: 0, y: top + (t.clip.offsetY || 0), width: 1440, height: 900 } });
       } else {
         png = await page.screenshot({ type: 'png' });
       }
       const file = path.join(OUT, `${t.name}.webp`);
-      await sharp(png).webp({ quality: 80 }).toFile(file);
+      await sharp(png).resize(1440, 900, { fit: 'cover', position: 'top' }).webp({ quality: 80 }).toFile(file);
       console.log(`  saved ${path.relative(process.cwd(), file)}`);
     } catch (e) {
       console.log(`  FAILED: ${e.message}`);

@@ -627,8 +627,22 @@ button { font: inherit; color: inherit; }
   grid-column: 1 / -1;
   flex-direction: row;
 }
-.project--feature .project__media, .project--wide .project__media { flex: 0 0 54%; aspect-ratio: auto; min-height: 100%; border-bottom: 0; border-right: 1px solid var(--border); }
-.project--compact { grid-column: 1 / -1; flex-direction: row; align-items: stretch; }
+.project--flip { flex-direction: row-reverse; }
+.project--feature .project__media, .project--wide .project__media {
+  flex: 0 0 54%; aspect-ratio: auto; min-height: 100%;
+  border-bottom: 0; border-right: 1px solid var(--border);
+}
+.project--flip .project__media { border-right: 0; border-left: 1px solid var(--border); }
+/* Cards without an image: body only, half width, small icon tile in the corner */
+.project--compact .project__meta { padding-right: 56px; min-height: 44px; }
+.project__icon {
+  position: absolute; top: clamp(1.25rem, 2.4vw, 2rem); right: clamp(1.25rem, 2.4vw, 2rem);
+  display: grid; place-items: center;
+  width: 44px; height: 44px; border-radius: 12px;
+  border: 1px solid var(--border-strong);
+  background: var(--bg); color: var(--accent-text);
+}
+.project__icon .icon { width: 20px; height: 20px; stroke-width: 1.6; }
 
 .project__media {
   position: relative;
@@ -644,33 +658,17 @@ button { font: inherit; color: inherit; }
   transition: transform var(--t-slow) var(--ease);
 }
 .project:hover .project__media img { transform: scale(1.025); }
-.project--feature .project__media img, .project--wide .project__media img { position: absolute; inset: 0; }
-.media-fallback, .private-panel {
-  position: absolute; inset: 0;
-  display: grid; place-items: center; align-content: center; gap: var(--sp-3);
-  color: var(--muted);
+/* Wide cards: show the whole 16:10 screenshot as a framed window, centred in the panel */
+.project--feature .project__media, .project--wide .project__media {
+  display: grid; place-items: center;
+  padding: clamp(1rem, 2.4vw, 2rem);
 }
-.media-fallback::before, .private-panel::before {
-  content: ""; position: absolute; inset: 0;
-  background-image:
-    linear-gradient(var(--grid-line) 1px, transparent 1px),
-    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
-  background-size: 28px 28px;
-  -webkit-mask-image: radial-gradient(60% 70% at 50% 50%, #000, transparent);
-  mask-image: radial-gradient(60% 70% at 50% 50%, #000, transparent);
-  opacity: .8;
+.project--feature .project__media img, .project--wide .project__media img {
+  width: 100%; height: auto; aspect-ratio: 16 / 10;
+  border-radius: 10px;
+  border: 1px solid var(--border-strong);
+  box-shadow: 0 24px 50px -24px rgba(0, 0, 0, .7), 0 0 0 1px rgba(var(--accent-rgb), .06);
 }
-.media-fallback .icon, .private-panel .icon {
-  position: relative;
-  width: 56px; height: 56px; padding: 14px;
-  border-radius: 16px; border: 1px solid var(--border-strong);
-  background: var(--surface); color: var(--accent-text); stroke-width: 1.5;
-}
-.private-panel span {
-  position: relative;
-  font-family: var(--font-mono); font-size: var(--fs-xs); letter-spacing: .14em; text-transform: uppercase;
-}
-
 .project__body {
   display: flex; flex-direction: column; gap: var(--sp-4);
   padding: clamp(1.25rem, 2.4vw, 2rem);
@@ -747,30 +745,15 @@ button { font: inherit; color: inherit; }
 }
 .project__private .icon { color: var(--accent-text); }
 
-.board {
-  flex: 0 0 min(30%, 260px);
-  margin: var(--sp-5); margin-left: 0;
-  border-radius: var(--r-md);
-  border: 1px solid var(--border);
-  background:
-    radial-gradient(circle at 31.25% 18.75%, var(--accent) 0 4%, transparent 4.5%),
-    radial-gradient(circle at 81.25% 31.25%, var(--accent) 0 4%, transparent 4.5%),
-    radial-gradient(circle at 18.75% 56.25%, var(--accent) 0 4%, transparent 4.5%),
-    radial-gradient(circle at 68.75% 81.25%, var(--accent) 0 4%, transparent 4.5%),
-    repeating-conic-gradient(var(--surface-2) 0 25%, var(--bg) 0 50%) 0 0 / 25% 25%;
-  aspect-ratio: 1; align-self: center;
-  opacity: .9;
-}
 
 @media (max-width: 900px) {
   .project-grid { grid-template-columns: 1fr; }
-  .project--feature, .project--wide, .project--compact { flex-direction: column; }
+  .project--feature, .project--wide, .project--flip { flex-direction: column; }
   .project--feature .project__media, .project--wide .project__media {
-    flex: none; aspect-ratio: 16 / 10; min-height: 0; border-right: 0; border-bottom: 1px solid var(--border);
+    flex: none; aspect-ratio: auto; min-height: 0; border-right: 0; border-left: 0; border-bottom: 1px solid var(--border);
+    padding: 0;
   }
-  .board { display: none; }
-  .project__media--empty, .project__media--private,
-  .project--feature .project__media--empty, .project--wide .project__media--empty { aspect-ratio: 21 / 8; }
+  .project--feature .project__media img, .project--wide .project__media img { border-radius: 0; border: 0; box-shadow: none; }
 }
 
 /* 10. Journey ------------------------------------------------------------- */

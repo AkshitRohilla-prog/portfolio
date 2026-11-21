@@ -40,14 +40,20 @@ node scripts/generate-images.js
 If the new image has a different size, update `width`/`height` on the `<img>` tags in the hero.
 
 ### Add a project screenshot
-Screenshots are 1440 × 900 WebP files in `assets/screenshots/`. Each project card in `index.html` has a media block marked with a comment such as `<!-- SCREENSHOT: neighborly -->`. To show an image, replace the `<div class="media-fallback">…</div>` inside that block with:
+Screenshots are 1440 × 900 WebP files in `assets/screenshots/`. Cards with an image use the `project--wide` (or `project--feature`) class and start with:
 
 ```html
-<img src="assets/screenshots/neighborly.webp" width="1440" height="900" loading="lazy" decoding="async"
-     alt="Screenshot of the Neighborly home page">
+<div class="project__media">
+  <img src="assets/screenshots/NAME.webp" width="1440" height="900" loading="lazy" decoding="async"
+       alt="Short honest description of what the screenshot shows">
+</div>
 ```
 
-and remove `project__media--empty` from the block's class list. For the **Student Community Portal** (private), save your own image as `assets/screenshots/student-portal.webp`, then do the same in the block marked `TODO(screenshot)` and replace the `private-panel` div. Keep the "Private project. Code available on request." line unless you publish the code.
+Cards without an image (Student Community Portal, N-Queens) use `project--compact`: half width, text only, with a small icon tile in the corner. To give the **Student Community Portal** an image, save it as `assets/screenshots/student-portal.webp`. Then, on that card:
+- change the classes to `card project project--wide reveal`
+- replace the `<span class="project__icon">…</span>` with the media block above
+
+The comment marked `TODO(screenshot)` points to the spot. Keep the "Private project. Code available on request." line unless you publish the code.
 
 ### Add the CV
 1. Save the PDF as `assets/Akshit_Rohilla_CV.pdf`.
@@ -79,7 +85,11 @@ Capture all live projects (or pass one name: `road-issues`, `neighborly`, `shiv-
 node scripts/capture-screenshots.js
 ```
 
-The script wakes a sleeping Streamlit app, waits for pages to finish loading, and saves the page exactly as rendered. Check each image before using it: no personal data, no error banners.
+The script wakes a sleeping Streamlit app, waits for pages to finish loading, and saves the page exactly as rendered, cropped where noted:
+- **Road Issues:** only the tabs, upload panel and damage classes. The app's header and sidebar show accuracy figures, which must stay off the portfolio.
+- **Shiv Enterprises:** only the products area. The About and Contact sections name the owner, and the shop photo shows tax IDs.
+
+Check each image before using it: no personal data, no figures, no error banners.
 
 Social image (`assets/og-image.png`, from `scripts/og-image.html`) and PNG favicons (from `assets/favicon.svg`):
 
