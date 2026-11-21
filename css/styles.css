@@ -687,17 +687,29 @@ button { font: inherit; color: inherit; }
 .label--personal { border-color: rgba(var(--glow-rgb), .9); color: var(--text); background: rgba(var(--glow-rgb), .25); }
 .project__title { font-size: var(--fs-lg); }
 .project__desc { color: var(--muted); max-width: 65ch; }
+/* "My contribution": cyan rail + tinted panel so it is the first thing the eye finds */
 .project__contrib {
-  padding: var(--sp-4);
+  position: relative;
+  padding: var(--sp-4) var(--sp-4) var(--sp-4) calc(var(--sp-4) + 4px);
   border-radius: var(--r-md);
-  background: var(--bg);
-  border: 1px solid var(--border);
+  background: linear-gradient(90deg, rgba(var(--accent-rgb), .09), rgba(var(--accent-rgb), .02) 60%), var(--bg);
+  border: 1px solid rgba(var(--accent-rgb), .28);
+  overflow: hidden;
 }
-.project__contrib p:last-child { font-size: .98rem; }
+.project__contrib::before {
+  content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 4px;
+  background: var(--accent);
+}
+.project__contrib p:last-child { font-size: 1rem; color: var(--text); font-weight: 500; }
+.project__contrib .contrib__label { display: flex; align-items: center; gap: .45rem; }
+.project__contrib .contrib__label::before {
+  content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--accent);
+}
 .contrib__label {
   font-family: var(--font-mono); font-size: .72rem; letter-spacing: .14em; text-transform: uppercase;
   color: var(--accent-text); margin-bottom: .35rem;
 }
+.project__more { border-top: 1px dashed var(--border); padding-top: var(--sp-2); }
 .project__more summary {
   display: inline-flex; align-items: center; gap: .5rem;
   min-height: 44px; cursor: pointer; list-style: none;
@@ -727,23 +739,37 @@ button { font: inherit; color: inherit; }
   border: 1px solid var(--border); color: var(--muted);
 }
 .tags--quiet li { font-family: var(--font-body); font-size: .85rem; }
-.project__links { display: flex; flex-wrap: wrap; gap: var(--sp-2); margin-top: auto; padding-top: var(--sp-2); }
-.link-btn {
-  display: inline-flex; align-items: center; gap: .45rem;
-  min-height: 44px; padding: .5rem 1rem;
-  border-radius: var(--r-pill);
-  border: 1px solid var(--border-strong);
-  color: var(--text); text-decoration: none; font-weight: 600; font-size: .95rem;
-  transition: border-color var(--t-fast), color var(--t-fast), background-color var(--t-fast);
+/* Link row: always the last thing on a card, separated by a hairline */
+.project__links {
+  display: flex; flex-wrap: wrap; align-items: center; gap: var(--sp-3);
+  margin-top: auto; padding-top: var(--sp-4);
+  border-top: 1px solid var(--border);
 }
-.link-btn .icon { color: var(--accent-text); }
-.link-btn:hover { border-color: var(--accent); color: var(--accent-text); background: rgba(var(--accent-rgb), .06); }
-.project__private {
+.project__body > .project__more:last-child { margin-top: auto; }
+.pbtn {
+  display: inline-flex; align-items: center; justify-content: center; gap: .55rem;
+  min-height: 46px; padding: .6rem 1.15rem;
+  border-radius: var(--r-pill);
+  font-weight: 600; font-size: .95rem; text-decoration: none;
+  border: 1px solid transparent;
+  transition: transform var(--t-fast) var(--ease), border-color var(--t-fast), color var(--t-fast), background-color var(--t-fast), box-shadow var(--t-med);
+}
+.pbtn .icon { width: 18px; height: 18px; }
+.pbtn:hover { transform: translateY(-2px); }
+.pbtn--demo {
+  color: var(--accent-text);
+  border-color: rgba(var(--accent-rgb), .55);
+  background: rgba(var(--accent-rgb), .08);
+}
+.pbtn--demo:hover { background: rgba(var(--accent-rgb), .16); border-color: var(--accent); box-shadow: 0 10px 26px -14px rgba(var(--accent-rgb), .7); }
+.pbtn--code { color: var(--text); border-color: var(--border-strong); background: var(--bg); }
+.pbtn--code:hover { border-color: var(--text); }
+.pnote {
   display: inline-flex; align-items: center; gap: .5rem;
-  margin-top: auto; padding-top: var(--sp-2);
+  min-height: 46px; margin: 0;
   color: var(--muted); font-size: var(--fs-sm);
 }
-.project__private .icon { color: var(--accent-text); }
+.pnote .icon { color: var(--accent-text); }
 
 
 @media (max-width: 900px) {

@@ -119,6 +119,45 @@
     });
   });
 
+  /* ---------- Optional screenshots for cards without an image ----------
+     A card with data-auto-shot="assets/screenshots/x.webp" stays compact until that file
+     exists; then the image is shown automatically. Nothing is generated or faked. */
+  function showAutoShot(card) {
+    var src = card.getAttribute('data-auto-shot');
+    var probe = new Image();
+    probe.onload = function () {
+      if (probe.naturalWidth < 200) return;
+      var media = document.createElement('div');
+      media.className = 'project__media';
+      var img = document.createElement('img');
+      img.src = src;
+      img.alt = card.getAttribute('data-auto-alt') || '';
+      img.width = probe.naturalWidth;
+      img.height = probe.naturalHeight;
+      img.decoding = 'async';
+      media.appendChild(img);
+      var icon = card.querySelector('.project__icon');
+      if (icon) icon.remove();
+      card.insertBefore(media, card.firstChild);
+      card.classList.remove('project--compact');
+      card.classList.add('project--wide');
+    };
+    probe.src = src;
+  }
+  var autoCards = document.querySelectorAll('[data-auto-shot]');
+  if (autoCards.length) {
+    if ('IntersectionObserver' in window) {
+      var shotIO = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) {
+          if (en.isIntersecting) { shotIO.unobserve(en.target); showAutoShot(en.target); }
+        });
+      }, { rootMargin: '600px 0px' });
+      autoCards.forEach(function (c) { shotIO.observe(c); });
+    } else {
+      autoCards.forEach(showAutoShot);
+    }
+  }
+
   /* ---------- Project card tilt (desktop, fine pointer only) ---------- */
   function cardTilt() {
     if (!mqFine.matches || mqReduce.matches) return;

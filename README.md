@@ -40,7 +40,13 @@ node scripts/generate-images.js
 If the new image has a different size, update `width`/`height` on the `<img>` tags in the hero.
 
 ### Add a project screenshot
-Screenshots are 1440 × 900 WebP files in `assets/screenshots/`. Cards with an image use the `project--wide` (or `project--feature`) class and start with:
+Screenshots are 1440 × 900 WebP files in `assets/screenshots/`.
+
+**Student Community Portal and N-Queens:** just save the image as `assets/screenshots/student-portal.webp` or `assets/screenshots/n-queens.webp`. `js/main.js` checks for these files and turns the compact card into an image card automatically. No HTML edit is needed. Use only real screenshots.
+
+On Vercel, missing files in that folder are routed to `assets/screenshots/missing.txt` (see `vercel.json`), so the check never logs a 404. On other hosts a missing image logs one harmless 404 in the console.
+
+**Other cards** have the image written into the HTML:
 
 ```html
 <div class="project__media">
@@ -49,14 +55,21 @@ Screenshots are 1440 × 900 WebP files in `assets/screenshots/`. Cards with an i
 </div>
 ```
 
-Cards without an image (Student Community Portal, N-Queens) use `project--compact`: half width, text only, with a small icon tile in the corner. To give the **Student Community Portal** an image, save it as `assets/screenshots/student-portal.webp`. Then, on that card:
-- change the classes to `card project project--wide reveal`
-- replace the `<span class="project__icon">…</span>` with the media block above
+### Project card layout
+Every card follows the same order:
+1. image (optional)
+2. label and context
+3. title
+4. one-sentence description
+5. **My contribution**
+6. tags
+7. **Technical detail**: expandable, for anything longer
+8. buttons: **Live demo** (`pbtn pbtn--demo`) and **GitHub** (`pbtn pbtn--code`)
 
-The comment marked `TODO(screenshot)` points to the spot. Keep the "Private project. Code available on request." line unless you publish the code.
+Keep the visible text short and put extra detail inside the `<details>` block.
 
 ### Edit project text
-All text is in `index.html`. Each project is one `<article class="card project">`. Edit the description, the "My contribution" box, the `<details>` "Technical detail" block, the tags and the links in place. Rules worth keeping: no accuracy numbers, no project counts, no invented details.
+All text is in `index.html`. Each project is one `<article class="card project …">`. Edit the description, the "My contribution" box, the `<details>` "Technical detail" block, the tags and the buttons in place. Rules worth keeping: no accuracy numbers, no project counts, no invented details.
 
 ### Colours
 The tokens at the top of `css/styles.css` define the dark theme (`:root`) and the light theme (`:root[data-theme="light"]`, repeated once inside the `prefers-color-scheme` block for visitors without JavaScript). Change both light blocks together.

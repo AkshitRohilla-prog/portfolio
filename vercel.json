@@ -49,5 +49,11 @@
         }
       ]
     }
+  ],
+  "rewrites": [
+    {
+      "source": "/assets/screenshots/(.*)",
+      "destination": "/assets/screenshots/missing.txt"
+    }
   ]
 }

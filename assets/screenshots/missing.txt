@@ -1,0 +1,1 @@
+No screenshot here. Missing files in this folder are routed to this text file (see vercel.json) so the page can check for optional images quietly.
