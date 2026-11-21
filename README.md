@@ -71,6 +71,31 @@ Keep the visible text short and put extra detail inside the `<details>` block.
 ### Edit project text
 All text is in `index.html`. Each project is one `<article class="card project …">`. Edit the description, the "My contribution" box, the `<details>` "Technical detail" block, the tags and the buttons in place. Rules worth keeping: no accuracy numbers, no project counts, no invented details.
 
+### Edit skills
+Each skill is a `<button class="chip">` in the Skills section of `index.html`:
+
+```html
+<button class="chip" type="button" aria-pressed="false" data-note="Road Issues Detection.">
+  <span class="chip__name">PyTorch</span><span class="chip__src"><span class="sr-only">, from </span>Project</span>
+</button>
+```
+
+- **`chip__src`** is the source label: `Project`, `Coursework`, `Self-study`, or a combination. Leave it out if you'd rather not say.
+- **`data-note`** is the short "where I used it" line shown when the chip is selected. Keep it to a few words.
+- The text in `skill-group__note` is the group summary, shown by default and when JavaScript is off.
+- Don't repeat the "Currently learning" line in the notes.
+
+### Edit the journey
+The timeline in the Journey section is an ordered list:
+- each step is `<li class="tl">`
+- the first step is `tl--start` (March 2025)
+- the last step is `tl--now` ("Ongoing")
+
+Only March 2025 and the degree dates carry dates. Add new milestones in order, before the `tl--now` item.
+
+### Edit contact links
+The three Contact links are `.contact-link` items: "Email me" (the cyan main action), "Connect on LinkedIn" and "Explore my GitHub". The email address appears as text inside the email link.
+
 ### Colours
 The tokens at the top of `css/styles.css` define the dark theme (`:root`) and the light theme (`:root[data-theme="light"]`, repeated once inside the `prefers-color-scheme` block for visitors without JavaScript). Change both light blocks together.
 
@@ -129,4 +154,6 @@ Every push to the main branch redeploys automatically.
 ## Notes
 - Three.js was not needed: the hero network is a small Canvas 2D script (about 5 KB). It loads only when the hero is visible, on screens at least 768 px wide, with reduced motion off. It caps pixel density at 1.5 and pauses when hidden or scrolled away.
 - With JavaScript off, every section is still fully readable, and the theme follows the operating system.
+- Scroll reveals only fade opacity, never `visibility`. Content that hasn't been revealed yet stays reachable by keyboard, and anything that receives focus is revealed at once.
+- Link previews use the description "Software Engineering student in Berlin. Building software, learning to secure it." (81 characters), set in the `description`, `og:description` and `twitter:description` tags.
 - Fonts: Sora, DM Sans and JetBrains Mono under the SIL Open Font License (`assets/fonts/LICENSE-OFL.txt`).
