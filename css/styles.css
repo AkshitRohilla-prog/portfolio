@@ -557,7 +557,8 @@ button { font: inherit; color: inherit; }
 .skill-group__title { font-size: var(--fs-md); font-weight: 600; }
 .chips { display: flex; flex-wrap: wrap; gap: var(--sp-2); }
 .chip {
-  min-height: 44px; padding: .5rem 1rem;
+  display: inline-flex; align-items: center; gap: .55rem;
+  min-height: 44px; padding: .45rem .55rem .45rem 1rem;
   border-radius: var(--r-pill);
   border: 1px solid var(--border);
   background: var(--bg);
@@ -565,13 +566,27 @@ button { font: inherit; color: inherit; }
   cursor: pointer;
   transition: border-color var(--t-fast), color var(--t-fast), background-color var(--t-fast), transform var(--t-fast) var(--ease), box-shadow var(--t-med);
 }
-.chip:hover { border-color: var(--accent); }
-.chip[aria-pressed="true"] {
-  border-color: var(--accent);
-  color: var(--accent-text);
-  background: rgba(var(--accent-rgb), .08);
-  box-shadow: 0 0 0 3px rgba(var(--accent-rgb), .12);
+.chip:not(:has(.chip__src)) { padding-right: 1rem; }
+/* source tag: Project / Coursework / Self-study */
+.chip__src {
+  font-family: var(--font-mono); font-size: .66rem; letter-spacing: .06em; text-transform: uppercase;
+  padding: .2rem .5rem; border-radius: var(--r-pill);
+  color: var(--muted); background: var(--surface-2); border: 1px solid var(--border);
+  white-space: nowrap;
 }
+.chip:hover { border-color: var(--accent); }
+/* selected: solid cyan, unmistakable in both themes */
+.chip[aria-pressed="true"] {
+  border-color: var(--accent-fill);
+  background: var(--accent-fill);
+  color: var(--on-accent);
+  font-weight: 600;
+  box-shadow: 0 0 0 3px rgba(0, 229, 255, .22), 0 8px 22px -10px rgba(0, 229, 255, .7);
+}
+.chip[aria-pressed="true"] .chip__src {
+  color: var(--on-accent); background: rgba(5, 5, 5, .1); border-color: rgba(5, 5, 5, .25);
+}
+.chip[aria-pressed="true"]:focus-visible { outline-color: var(--text); }
 .skill-group__note {
   margin-top: auto;
   padding-top: var(--sp-4);

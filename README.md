@@ -123,7 +123,7 @@ Every push to the main branch redeploys automatically.
 **Add new site → Import from Git**, no build command, publish directory `.`. `404.html` is used automatically. `vercel.json` is ignored; add a `_headers` file if you want the same caching rules.
 
 ## Open items (search the code for `TODO`)
-- `TODO(screenshot)`: Student Community Portal image (the card works without it).
+- Optional: real screenshots at `assets/screenshots/student-portal.webp` or `n-queens.webp` (picked up automatically).
 - `TODO(review)`: "What I learned" wording on Road Issues Detection.
 
 ## Notes

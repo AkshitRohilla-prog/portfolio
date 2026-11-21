@@ -99,7 +99,8 @@
 
     function show(chip) {
       var text = chip && chip.getAttribute('data-note');
-      note.textContent = text || fallback;
+      var name = chip && chip.querySelector('.chip__name');
+      note.textContent = text ? (name ? name.textContent + ': ' : '') + text : fallback;
       note.classList.toggle('is-specific', !!text);
     }
     function restore() { show(pinned); }
