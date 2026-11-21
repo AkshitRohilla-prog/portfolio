@@ -1,9 +1,6 @@
 /* Akshit Rohilla portfolio: progressive enhancements.
    Everything here is optional: the page is complete and readable without it. */
 
-// Set to true once assets/Akshit_Rohilla_CV.pdf exists. TODO(cv)
-const SHOW_CV_BUTTON = false;
-
 (function () {
   'use strict';
 
@@ -14,12 +11,6 @@ const SHOW_CV_BUTTON = false;
 
   function store(key, value) {
     try { localStorage.setItem(key, value); } catch (e) { /* storage blocked: ignore */ }
-  }
-
-  /* ---------- CV button ---------- */
-  if (SHOW_CV_BUTTON) {
-    var cv = document.querySelector('[data-cv]');
-    if (cv) cv.hidden = false;
   }
 
   /* ---------- Theme toggle ---------- */

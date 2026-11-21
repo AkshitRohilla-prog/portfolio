@@ -6,7 +6,7 @@ A one-page personal site: plain HTML, CSS and JavaScript with no build step. Fon
 index.html            the whole page (all text lives here)
 404.html              "page not found", no scripts
 css/styles.css        all styling, colour tokens for dark + light at the top
-js/main.js            theme toggle, menu, skills, parallax, scroll reveals  (SHOW_CV_BUTTON is here)
+js/main.js            theme toggle, menu, skills, parallax, scroll reveals
 js/hero3d.js          the subtle node network behind the photo (desktop only, lazy-loaded)
 js/vendor/            gsap.min.js + ScrollTrigger.min.js (GSAP 3.12.5)
 assets/               photo, fonts, favicons, og-image.png, screenshots/
@@ -54,12 +54,6 @@ Cards without an image (Student Community Portal, N-Queens) use `project--compac
 - replace the `<span class="project__icon">…</span>` with the media block above
 
 The comment marked `TODO(screenshot)` points to the spot. Keep the "Private project. Code available on request." line unless you publish the code.
-
-### Add the CV
-1. Save the PDF as `assets/Akshit_Rohilla_CV.pdf`.
-2. In `js/main.js`, change the first line to `const SHOW_CV_BUTTON = true;`.
-
-A "Download CV (PDF)" button then appears in the Contact section.
 
 ### Edit project text
 All text is in `index.html`. Each project is one `<article class="card project">`. Edit the description, the "My contribution" box, the `<details>` "Technical detail" block, the tags and the links in place. Rules worth keeping: no accuracy numbers, no project counts, no invented details.
@@ -116,7 +110,6 @@ Every push to the main branch redeploys automatically.
 **Add new site → Import from Git**, no build command, publish directory `.`. `404.html` is used automatically. `vercel.json` is ignored; add a `_headers` file if you want the same caching rules.
 
 ## Open items (search the code for `TODO`)
-- `TODO(cv)`: CV PDF, hidden until `SHOW_CV_BUTTON = true`.
 - `TODO(screenshot)`: Student Community Portal image (the card works without it).
 - `TODO(review)`: "What I learned" wording on Road Issues Detection.
 
