@@ -44,7 +44,7 @@
 
   <link rel="preload" href="assets/fonts/sora-latin-wght.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/dm-sans-latin-wght.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" as="image" href="assets/photo-cutout.webp" type="image/webp" fetchpriority="high">
+  <link rel="preload" as="image" type="image/webp" imagesrcset="assets/photo-cutout-560.webp 560w, assets/photo-cutout.webp 838w" imagesizes="(max-width: 900px) min(78vw, 360px), 460px" fetchpriority="high">
   <link rel="stylesheet" href="css/styles.css">
 
   <script src="js/vendor/gsap.min.js" defer></script>
@@ -56,7 +56,7 @@
 
   <header class="topbar" id="top">
     <div class="topbar__inner container">
-      <a class="brand" href="#home" aria-label="Akshit Rohilla, back to top">
+      <a class="brand" href="#home">
         <span class="brand__mark" aria-hidden="true">AR</span>
         <span class="brand__name">Akshit Rohilla</span>
       </a>
@@ -126,13 +126,13 @@
                 </div>
                 <div class="layer layer--net" aria-hidden="true"></div>
                 <div class="layer layer--ghost" aria-hidden="true">
-                  <img src="assets/photo-cutout.webp" alt="" width="838" height="1200" decoding="async">
+                  <img src="assets/photo-cutout.webp" srcset="assets/photo-cutout-560.webp 560w, assets/photo-cutout.webp 838w" sizes="(max-width: 900px) min(78vw, 360px), 460px" alt="" width="838" height="1200" decoding="async">
                 </div>
                 <div class="layer layer--photo">
                   <span class="contact-shadow" aria-hidden="true"></span>
-                  <img class="photo-edge" src="assets/photo-cutout.webp" alt="" width="838" height="1200" aria-hidden="true" decoding="async">
+                  <img class="photo-edge" src="assets/photo-cutout.webp" srcset="assets/photo-cutout-560.webp 560w, assets/photo-cutout.webp 838w" sizes="(max-width: 900px) min(78vw, 360px), 460px" alt="" width="838" height="1200" aria-hidden="true" decoding="async">
                   <picture>
-                    <source srcset="assets/photo-cutout.webp" type="image/webp">
+                    <source srcset="assets/photo-cutout-560.webp 560w, assets/photo-cutout.webp 838w" sizes="(max-width: 900px) min(78vw, 360px), 460px" type="image/webp">
                     <img class="photo" src="assets/photo-cutout.png" alt="Portrait of Akshit Rohilla" width="838" height="1200" fetchpriority="high" loading="eager" decoding="async">
                   </picture>
                 </div>
