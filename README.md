@@ -105,11 +105,7 @@ node scripts/generate-images.js
 3. Framework preset: **Other**. Leave Build Command empty. Output Directory: `.` (the root).
 4. Click **Deploy**. `404.html` and `vercel.json` are picked up automatically.
 5. Optional: **Settings → Domains** to add your own domain.
-6. Once the final address is known, finish the `TODO(domain)` in `index.html`:
-   - add `<link rel="canonical" href="https://YOUR-DOMAIN/">`
-   - make `og:image` and `twitter:image` absolute, e.g. `https://YOUR-DOMAIN/assets/og-image.png`, and add `og:url`.
-
-   LinkedIn and other link previews need the absolute image URL.
+6. Live address: **https://akshit-rohilla.vercel.app**. It is set in `index.html` (canonical, `og:url`, `og:image`, `twitter:image`). If you add a custom domain, replace that address in those four tags.
 
 Every push to the main branch redeploys automatically.
 
@@ -122,7 +118,6 @@ Every push to the main branch redeploys automatically.
 ## Open items (search the code for `TODO`)
 - `TODO(cv)`: CV PDF, hidden until `SHOW_CV_BUTTON = true`.
 - `TODO(screenshot)`: Student Community Portal image (the card works without it).
-- `TODO(domain)`: canonical and absolute Open Graph URLs.
 - `TODO(review)`: "What I learned" wording on Road Issues Detection.
 
 ## Notes
