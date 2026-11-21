@@ -69,7 +69,11 @@ One-time setup:
 cd scripts && npm install && npx playwright install chromium && cd ..
 ```
 
-Capture all live projects (or pass one name: `road-issues`, `neighborly`, `shiv-enterprises`):
+Capture all live projects (or pass one name: `road-issues`, `neighborly`, `shiv-enterprises`). Live addresses:
+
+- Road Issues Detection: https://road-issues-detection-ml-project-9x3honm3mm9sznunnqxwr7.streamlit.app/
+- Neighborly: https://akshitrohilla-prog.github.io/neighborly/
+- Shiv Enterprises: https://shiv-enterprises-panipat.netlify.app/
 
 ```bash
 node scripts/capture-screenshots.js
@@ -109,7 +113,6 @@ Every push to the main branch redeploys automatically.
 - `TODO(cv)`: CV PDF, hidden until `SHOW_CV_BUTTON = true`.
 - `TODO(screenshot)`: Student Community Portal image (the card works without it).
 - `TODO(domain)`: canonical and absolute Open Graph URLs.
-- `TODO(link)`: Shiv Enterprises live URL (the Netlify address returned "Not Found" on 2026-11-21).
 - `TODO(review)`: "What I learned" wording on Road Issues Detection.
 
 ## Notes

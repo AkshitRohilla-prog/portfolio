@@ -13,7 +13,9 @@ const OUT = path.join(__dirname, '..', 'assets', 'screenshots');
 const TARGETS = [
   { name: 'road-issues', url: 'https://road-issues-detection-ml-project-9x3honm3mm9sznunnqxwr7.streamlit.app/', streamlit: true },
   { name: 'neighborly', url: 'https://akshitrohilla-prog.github.io/neighborly/' },
-  { name: 'shiv-enterprises', url: 'https://flourishing-lolly-73c3e4.netlify.app/' }
+  // Shiv: products area only. The About and Contact sections name the owner, and the shop
+  // photo in the top area shows tax IDs and a neighbouring sign, so both are left out.
+  { name: 'shiv-enterprises', url: 'https://shiv-enterprises-panipat.netlify.app/', clip: { selector: '#products', offsetY: 62 } }
   // Student Community Portal is private: add assets/screenshots/student-portal.webp by hand.
 ];
 
@@ -48,7 +50,13 @@ async function wakeStreamlit(page) {
       if (t.streamlit) await wakeStreamlit(page);
       await page.evaluate(() => document.fonts && document.fonts.ready);
       await page.waitForTimeout(4000); // let intro animations settle
-      const png = await page.screenshot({ type: 'png' });
+      let png;
+      if (t.clip) {
+        const top = await page.$eval(t.clip.selector, el => el.getBoundingClientRect().top + window.scrollY);
+        png = await page.screenshot({ type: 'png', fullPage: true, clip: { x: 0, y: top + (t.clip.offsetY || 0), width: 1440, height: 900 } });
+      } else {
+        png = await page.screenshot({ type: 'png' });
+      }
       const file = path.join(OUT, `${t.name}.webp`);
       await sharp(png).webp({ quality: 80 }).toFile(file);
       console.log(`  saved ${path.relative(process.cwd(), file)}`);
