@@ -72,17 +72,21 @@ Keep the visible text short and put extra detail inside the `<details>` block.
 All text is in `index.html`. Each project is one `<article class="card project …">`. Edit the description, the "My contribution" box, the `<details>` "Technical detail" block, the tags and the buttons in place. Rules worth keeping: no accuracy numbers, no project counts, no invented details.
 
 ### Edit skills
-Each skill is a `<button class="chip">` in the Skills section of `index.html`:
+Each skill has two parts in the Skills section of `index.html`, joined by the same key:
 
 ```html
-<button class="chip" type="button" aria-pressed="false" data-note="Road Issues Detection.">
+<button class="chip" type="button" aria-pressed="false" data-skill="pytorch">
   <span class="chip__name">PyTorch</span><span class="chip__src"><span class="sr-only">, from </span>Project</span>
 </button>
+...
+<ul class="skill-notes" role="list">
+  <li data-note-for="pytorch"><span class="skill-notes__name">PyTorch:</span> Road Issues Detection.</li>
+</ul>
 ```
 
-- **`chip__src`** is the source label: `Project`, `Coursework`, `Self-study`, or a combination. Leave it out if you'd rather not say.
-- **`data-note`** is the short "where I used it" line shown when the chip is selected. Keep it to a few words.
-- The text in `skill-group__note` is the group summary, shown by default and when JavaScript is off.
+- **`chip__src`** is the source label: `Project`, `Coursework`, `Self-study`, or a combination. Leave it out entirely if you don't want a label (Windows and VS Code have none). The chip then keeps even padding.
+- **Notes:** each chip's note is the matching `<li data-note-for="…">` in that group's `skill-notes` list. Without JavaScript the full list is shown. With JavaScript the list is hidden, and selecting a chip shows its note in `skill-group__note`. Keep notes to a few words.
+- **Group summary:** the text in `skill-group__note` is shown before anything is selected.
 - Don't repeat the "Currently learning" line in the notes.
 
 ### Edit the journey

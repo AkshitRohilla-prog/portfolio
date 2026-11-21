@@ -97,10 +97,15 @@
     var chips = group.querySelectorAll('.chip');
     var pinned = null;
 
+    // Notes live in the HTML list .skill-notes (readable without JavaScript); one is shown at a time here.
+    function noteFor(chip) {
+      var key = chip && chip.getAttribute('data-skill');
+      var item = key && group.querySelector('.skill-notes [data-note-for="' + key + '"]');
+      return item ? item.textContent.replace(/\s+/g, ' ').trim() : '';
+    }
     function show(chip) {
-      var text = chip && chip.getAttribute('data-note');
-      var name = chip && chip.querySelector('.chip__name');
-      note.textContent = text ? (name ? name.textContent + ': ' : '') + text : fallback;
+      var text = noteFor(chip);
+      note.textContent = text || fallback;
       note.classList.toggle('is-specific', !!text);
     }
     function restore() { show(pinned); }

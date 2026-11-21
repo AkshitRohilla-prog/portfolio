@@ -595,6 +595,11 @@ button { font: inherit; color: inherit; }
   min-height: 3.4em;
 }
 .skill-group__note.is-specific { color: var(--text); }
+/* Full list of "where used" notes: visible without JavaScript; with it, one note shows at a time above */
+.skill-notes { display: grid; gap: .3rem; font-size: var(--fs-sm); color: var(--muted); }
+.skill-notes__name { color: var(--text); font-weight: 600; }
+.js .skill-notes { display: none; }
+.no-js .skill-group__note { min-height: 0; }
 .learning {
   display: flex; flex-wrap: wrap; align-items: baseline; gap: .4rem 1rem;
   margin-top: var(--sp-6);

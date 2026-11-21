@@ -180,61 +180,101 @@
           <article class="skill-group reveal" aria-labelledby="sg-prog">
             <h3 class="skill-group__title" id="sg-prog">Programming</h3>
             <ul class="chips" role="list">
-              <li><button class="chip" type="button" aria-pressed="false" data-note="Road Issues Detection and the N-Queens benchmark."><span class="chip__name">Python</span><span class="chip__src"><span class="sr-only">, from </span>Project</span></button></li>
-              <li><button class="chip" type="button" aria-pressed="false" data-note="Student Community Portal."><span class="chip__name">Flask</span><span class="chip__src"><span class="sr-only">, from </span>Project</span></button></li>
-              <li><button class="chip" type="button" aria-pressed="false" data-note="University modules."><span class="chip__name">C</span><span class="chip__src"><span class="sr-only">, from </span>Coursework</span></button></li>
-              <li><button class="chip" type="button" aria-pressed="false" data-note="University modules."><span class="chip__name">C++</span><span class="chip__src"><span class="sr-only">, from </span>Coursework</span></button></li>
-              <li><button class="chip" type="button" aria-pressed="false" data-note="Student Community Portal."><span class="chip__name">HTML</span><span class="chip__src"><span class="sr-only">, from </span>Project</span></button></li>
-              <li><button class="chip" type="button" aria-pressed="false" data-note="Student Community Portal."><span class="chip__name">CSS</span><span class="chip__src"><span class="sr-only">, from </span>Project</span></button></li>
+              <li><button class="chip" type="button" aria-pressed="false" data-skill="python"><span class="chip__name">Python</span><span class="chip__src"><span class="sr-only">, from </span>Project</span></button></li>
+              <li><button class="chip" type="button" aria-pressed="false" data-skill="flask"><span class="chip__name">Flask</span><span class="chip__src"><span class="sr-only">, from </span>Project</span></button></li>
+              <li><button class="chip" type="button" aria-pressed="false" data-skill="c"><span class="chip__name">C</span><span class="chip__src"><span class="sr-only">, from </span>Coursework</span></button></li>
+              <li><button class="chip" type="button" aria-pressed="false" data-skill="c"><span class="chip__name">C++</span><span class="chip__src"><span class="sr-only">, from </span>Coursework</span></button></li>
+              <li><button class="chip" type="button" aria-pressed="false" data-skill="html"><span class="chip__name">HTML</span><span class="chip__src"><span class="sr-only">, from </span>Project</span></button></li>
+              <li><button class="chip" type="button" aria-pressed="false" data-skill="css"><span class="chip__name">CSS</span><span class="chip__src"><span class="sr-only">, from </span>Project</span></button></li>
             </ul>
             <p class="skill-group__note" aria-live="polite">Python and Flask, HTML and CSS: projects. C and C++: coursework.</p>
+            <!-- Where each skill was used: shown as a list without JavaScript, and one at a time when a chip is selected. -->
+            <ul class="skill-notes" role="list">
+              <li data-note-for="python"><span class="skill-notes__name">Python:</span> Road Issues Detection and the N-Queens benchmark.</li>
+              <li data-note-for="flask"><span class="skill-notes__name">Flask:</span> Student Community Portal.</li>
+              <li data-note-for="c"><span class="skill-notes__name">C:</span> University modules.</li>
+              <li data-note-for="c"><span class="skill-notes__name">C++:</span> University modules.</li>
+              <li data-note-for="html"><span class="skill-notes__name">HTML:</span> Student Community Portal.</li>
+              <li data-note-for="css"><span class="skill-notes__name">CSS:</span> Student Community Portal.</li>
+            </ul>
           </article>
 
           <article class="skill-group reveal" aria-labelledby="sg-ml">
             <h3 class="skill-group__title" id="sg-ml">Machine learning</h3>
             <ul class="chips" role="list">
-              <li><button class="chip" type="button" aria-pressed="false" data-note="Road Issues Detection."><span class="chip__name">PyTorch</span><span class="chip__src"><span class="sr-only">, from </span>Project</span></button></li>
-              <li><button class="chip" type="button" aria-pressed="false" data-note="Road Issues Detection."><span class="chip__name">CNNs</span><span class="chip__src"><span class="sr-only">, from </span>Project</span></button></li>
-              <li><button class="chip" type="button" aria-pressed="false" data-note="Road Issues Detection."><span class="chip__name">Transfer learning</span><span class="chip__src"><span class="sr-only">, from </span>Project</span></button></li>
-              <li><button class="chip" type="button" aria-pressed="false" data-note="Road Issues Detection."><span class="chip__name">Model evaluation</span><span class="chip__src"><span class="sr-only">, from </span>Project</span></button></li>
-              <li><button class="chip" type="button" aria-pressed="false" data-note="Road Issues Detection prototype."><span class="chip__name">Streamlit</span><span class="chip__src"><span class="sr-only">, from </span>Project</span></button></li>
+              <li><button class="chip" type="button" aria-pressed="false" data-skill="pytorch"><span class="chip__name">PyTorch</span><span class="chip__src"><span class="sr-only">, from </span>Project</span></button></li>
+              <li><button class="chip" type="button" aria-pressed="false" data-skill="cnns"><span class="chip__name">CNNs</span><span class="chip__src"><span class="sr-only">, from </span>Project</span></button></li>
+              <li><button class="chip" type="button" aria-pressed="false" data-skill="transfer-learning"><span class="chip__name">Transfer learning</span><span class="chip__src"><span class="sr-only">, from </span>Project</span></button></li>
+              <li><button class="chip" type="button" aria-pressed="false" data-skill="model-evaluation"><span class="chip__name">Model evaluation</span><span class="chip__src"><span class="sr-only">, from </span>Project</span></button></li>
+              <li><button class="chip" type="button" aria-pressed="false" data-skill="streamlit"><span class="chip__name">Streamlit</span><span class="chip__src"><span class="sr-only">, from </span>Project</span></button></li>
             </ul>
             <p class="skill-group__note" aria-live="polite">All used in Road Issues Detection.</p>
+            <!-- Where each skill was used: shown as a list without JavaScript, and one at a time when a chip is selected. -->
+            <ul class="skill-notes" role="list">
+              <li data-note-for="pytorch"><span class="skill-notes__name">PyTorch:</span> Road Issues Detection.</li>
+              <li data-note-for="cnns"><span class="skill-notes__name">CNNs:</span> Road Issues Detection.</li>
+              <li data-note-for="transfer-learning"><span class="skill-notes__name">Transfer learning:</span> Road Issues Detection.</li>
+              <li data-note-for="model-evaluation"><span class="skill-notes__name">Model evaluation:</span> Road Issues Detection.</li>
+              <li data-note-for="streamlit"><span class="skill-notes__name">Streamlit:</span> Road Issues Detection prototype.</li>
+            </ul>
           </article>
 
           <article class="skill-group reveal" aria-labelledby="sg-net">
             <h3 class="skill-group__title" id="sg-net">Networking</h3>
             <ul class="chips" role="list">
-              <li><button class="chip" type="button" aria-pressed="false" data-note="Modules and self-study."><span class="chip__name">TCP/IP</span><span class="chip__src"><span class="sr-only">, from </span>Coursework · Self-study</span></button></li>
-              <li><button class="chip" type="button" aria-pressed="false" data-note="Modules and self-study."><span class="chip__name">OSI model</span><span class="chip__src"><span class="sr-only">, from </span>Coursework · Self-study</span></button></li>
-              <li><button class="chip" type="button" aria-pressed="false" data-note="Modules and self-study."><span class="chip__name">IPv4</span><span class="chip__src"><span class="sr-only">, from </span>Coursework · Self-study</span></button></li>
-              <li><button class="chip" type="button" aria-pressed="false" data-note="Modules and self-study."><span class="chip__name">IPv6</span><span class="chip__src"><span class="sr-only">, from </span>Coursework · Self-study</span></button></li>
+              <li><button class="chip" type="button" aria-pressed="false" data-skill="tcp-ip"><span class="chip__name">TCP/IP</span><span class="chip__src"><span class="sr-only">, from </span>Coursework · Self-study</span></button></li>
+              <li><button class="chip" type="button" aria-pressed="false" data-skill="osi-model"><span class="chip__name">OSI model</span><span class="chip__src"><span class="sr-only">, from </span>Coursework · Self-study</span></button></li>
+              <li><button class="chip" type="button" aria-pressed="false" data-skill="ipv4"><span class="chip__name">IPv4</span><span class="chip__src"><span class="sr-only">, from </span>Coursework · Self-study</span></button></li>
+              <li><button class="chip" type="button" aria-pressed="false" data-skill="ipv6"><span class="chip__name">IPv6</span><span class="chip__src"><span class="sr-only">, from </span>Coursework · Self-study</span></button></li>
             </ul>
             <p class="skill-group__note" aria-live="polite">Learned in modules and on my own.</p>
+            <!-- Where each skill was used: shown as a list without JavaScript, and one at a time when a chip is selected. -->
+            <ul class="skill-notes" role="list">
+              <li data-note-for="tcp-ip"><span class="skill-notes__name">TCP/IP:</span> Modules and self-study.</li>
+              <li data-note-for="osi-model"><span class="skill-notes__name">OSI model:</span> Modules and self-study.</li>
+              <li data-note-for="ipv4"><span class="skill-notes__name">IPv4:</span> Modules and self-study.</li>
+              <li data-note-for="ipv6"><span class="skill-notes__name">IPv6:</span> Modules and self-study.</li>
+            </ul>
           </article>
 
           <article class="skill-group reveal" aria-labelledby="sg-sec">
             <h3 class="skill-group__title" id="sg-sec">Cybersecurity</h3>
             <ul class="chips" role="list">
-              <li><button class="chip" type="button" aria-pressed="false" data-note="Modules and hands-on practice."><span class="chip__name">Security fundamentals</span><span class="chip__src"><span class="sr-only">, from </span>Coursework · Self-study</span></button></li>
-              <li><button class="chip" type="button" aria-pressed="false" data-note="Modules and hands-on practice."><span class="chip__name">Ethical hacking fundamentals</span><span class="chip__src"><span class="sr-only">, from </span>Coursework · Self-study</span></button></li>
-              <li><button class="chip" type="button" aria-pressed="false" data-note="Modules and hands-on practice."><span class="chip__name">Common cyberattacks</span><span class="chip__src"><span class="sr-only">, from </span>Coursework · Self-study</span></button></li>
+              <li><button class="chip" type="button" aria-pressed="false" data-skill="security-fundamentals"><span class="chip__name">Security fundamentals</span><span class="chip__src"><span class="sr-only">, from </span>Coursework · Self-study</span></button></li>
+              <li><button class="chip" type="button" aria-pressed="false" data-skill="ethical-hacking-fundamentals"><span class="chip__name">Ethical hacking fundamentals</span><span class="chip__src"><span class="sr-only">, from </span>Coursework · Self-study</span></button></li>
+              <li><button class="chip" type="button" aria-pressed="false" data-skill="common-cyberattacks"><span class="chip__name">Common cyberattacks</span><span class="chip__src"><span class="sr-only">, from </span>Coursework · Self-study</span></button></li>
             </ul>
             <p class="skill-group__note" aria-live="polite">Fundamentals from modules and hands-on practice.</p>
+            <!-- Where each skill was used: shown as a list without JavaScript, and one at a time when a chip is selected. -->
+            <ul class="skill-notes" role="list">
+              <li data-note-for="security-fundamentals"><span class="skill-notes__name">Security fundamentals:</span> Modules and hands-on practice.</li>
+              <li data-note-for="ethical-hacking-fundamentals"><span class="skill-notes__name">Ethical hacking fundamentals:</span> Modules and hands-on practice.</li>
+              <li data-note-for="common-cyberattacks"><span class="skill-notes__name">Common cyberattacks:</span> Modules and hands-on practice.</li>
+            </ul>
           </article>
 
           <article class="skill-group skill-group--wide reveal" aria-labelledby="sg-tools">
             <h3 class="skill-group__title" id="sg-tools">Tools</h3>
             <ul class="chips" role="list">
-              <li><button class="chip" type="button" aria-pressed="false" data-note="Command-line practice."><span class="chip__name">Linux</span><span class="chip__src"><span class="sr-only">, from </span>Self-study</span></button></li>
-              <li><button class="chip" type="button" aria-pressed="false"><span class="chip__name">Windows</span></button></li>
-              <li><button class="chip" type="button" aria-pressed="false" data-note="Code for Road Issues Detection and Neighborly."><span class="chip__name">Git/GitHub</span><span class="chip__src"><span class="sr-only">, from </span>Project</span></button></li>
-              <li><button class="chip" type="button" aria-pressed="false"><span class="chip__name">VS Code</span></button></li>
-              <li><button class="chip" type="button" aria-pressed="false" data-note="Sprint tracking in the Student Community Portal."><span class="chip__name">Jira</span><span class="chip__src"><span class="sr-only">, from </span>Project</span></button></li>
-              <li><button class="chip" type="button" aria-pressed="false"><span class="chip__name">Kaggle</span><span class="chip__src"><span class="sr-only">, from </span>Project</span></button></li>
-              <li><button class="chip" type="button" aria-pressed="false" data-note="The Road Issues Detection report."><span class="chip__name">LaTeX/Overleaf</span><span class="chip__src"><span class="sr-only">, from </span>Project</span></button></li>
+              <li><button class="chip" type="button" aria-pressed="false" data-skill="linux"><span class="chip__name">Linux</span><span class="chip__src"><span class="sr-only">, from </span>Self-study</span></button></li>
+              <li><button class="chip" type="button" aria-pressed="false" data-skill="windows"><span class="chip__name">Windows</span></button></li>
+              <li><button class="chip" type="button" aria-pressed="false" data-skill="git-github"><span class="chip__name">Git/GitHub</span><span class="chip__src"><span class="sr-only">, from </span>Project</span></button></li>
+              <li><button class="chip" type="button" aria-pressed="false" data-skill="vs-code"><span class="chip__name">VS Code</span></button></li>
+              <li><button class="chip" type="button" aria-pressed="false" data-skill="jira"><span class="chip__name">Jira</span><span class="chip__src"><span class="sr-only">, from </span>Project</span></button></li>
+              <li><button class="chip" type="button" aria-pressed="false" data-skill="kaggle"><span class="chip__name">Kaggle</span><span class="chip__src"><span class="sr-only">, from </span>Project</span></button></li>
+              <li><button class="chip" type="button" aria-pressed="false" data-skill="latex-overleaf"><span class="chip__name">LaTeX/Overleaf</span><span class="chip__src"><span class="sr-only">, from </span>Project</span></button></li>
             </ul>
             <p class="skill-group__note" aria-live="polite">Jira and LaTeX in projects, Linux through self-study.</p>
+            <!-- Where each skill was used: shown as a list without JavaScript, and one at a time when a chip is selected. -->
+            <ul class="skill-notes" role="list">
+              <li data-note-for="linux"><span class="skill-notes__name">Linux:</span> Command-line practice.</li>
+              <li data-note-for="windows"><span class="skill-notes__name">Windows:</span> Everyday working environment.</li>
+              <li data-note-for="git-github"><span class="skill-notes__name">Git/GitHub:</span> Code for Road Issues Detection and Neighborly.</li>
+              <li data-note-for="vs-code"><span class="skill-notes__name">VS Code:</span> Everyday code editor.</li>
+              <li data-note-for="jira"><span class="skill-notes__name">Jira:</span> Sprint tracking in the Student Community Portal.</li>
+              <li data-note-for="kaggle"><span class="skill-notes__name">Kaggle:</span> Used for machine learning work.</li>
+              <li data-note-for="latex-overleaf"><span class="skill-notes__name">LaTeX/Overleaf:</span> The Road Issues Detection report.</li>
+            </ul>
           </article>
         </div>
 
