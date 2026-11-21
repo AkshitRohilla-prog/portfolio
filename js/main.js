@@ -242,22 +242,29 @@
     if (!pending.length) return;
 
     var small = !mqWide.matches;
-    gsap.set(pending, { autoAlpha: 0, y: small ? 12 : 24 });
+    // opacity only (never visibility): hidden-but-unrevealed content must stay focusable by keyboard
+    gsap.set(pending, { opacity: 0, y: small ? 12 : 24 });
     window.ScrollTrigger.batch(pending, {
       start: 'top 92%',
       once: true,
       onEnter: function (batch) {
         gsap.to(batch, {
-          autoAlpha: 1, y: 0,
+          opacity: 1, y: 0,
           duration: small ? 0.45 : 0.6,
           ease: 'power2.out',
           stagger: small ? 0.04 : 0.08,
           overwrite: true,
-          clearProps: 'transform,visibility'
+          clearProps: 'transform,opacity'
         });
       }
     });
-    // Safety net: if layout shifts confuse triggers, show everything after a while.
+    // Keyboard users: anything that receives focus is revealed at once.
+    document.addEventListener('focusin', function (e) {
+      var el = e.target.closest && e.target.closest('.reveal');
+      if (el && getComputedStyle(el).opacity !== '1') {
+        gsap.to(el, { opacity: 1, y: 0, duration: 0.2, overwrite: true, clearProps: 'transform,opacity' });
+      }
+    });
     window.addEventListener('load', function () { window.ScrollTrigger.refresh(); });
   }
   reveals();
