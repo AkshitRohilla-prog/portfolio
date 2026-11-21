@@ -1,0 +1,13 @@
+{
+  "name": "portfolio-scripts",
+  "private": true,
+  "description": "Build-time helpers only (screenshots, social image, favicons). Not needed to run the site.",
+  "scripts": {
+    "screenshots": "node capture-screenshots.js",
+    "images": "node generate-images.js"
+  },
+  "dependencies": {
+    "playwright": "1.48.2",
+    "sharp": "0.33.5"
+  }
+}

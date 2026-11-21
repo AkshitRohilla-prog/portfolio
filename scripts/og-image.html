@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>OG image source</title>
+<style>
+  @font-face { font-family: "Sora"; src: url("../assets/fonts/sora-latin-wght.woff2") format("woff2"); font-weight: 100 800; }
+  @font-face { font-family: "DM Sans"; src: url("../assets/fonts/dm-sans-latin-wght.woff2") format("woff2"); font-weight: 100 1000; }
+  @font-face { font-family: "JetBrains Mono"; src: url("../assets/fonts/jetbrains-mono-latin-500.woff2") format("woff2"); font-weight: 500; }
+  html, body { margin: 0; }
+  body {
+    width: 1200px; height: 630px; overflow: hidden; position: relative;
+    background: #050505; color: #F2F2F5; font-family: "DM Sans", sans-serif;
+  }
+  .haze {
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(420px 420px at 900px 330px, rgba(59, 10, 107, .95), transparent 70%),
+      radial-gradient(360px 300px at 120px 40px, rgba(59, 10, 107, .45), transparent 70%);
+  }
+  .grid {
+    position: absolute; left: 620px; right: -80px; bottom: -10px; height: 200px;
+    background-image: linear-gradient(rgba(0,229,255,.16) 1px, transparent 1px), linear-gradient(90deg, rgba(0,229,255,.16) 1px, transparent 1px);
+    background-size: 34px 34px;
+    transform: perspective(380px) rotateX(62deg); transform-origin: bottom center;
+    -webkit-mask-image: radial-gradient(70% 90% at 50% 100%, #000 30%, transparent 75%);
+  }
+  .photo, .edge { position: absolute; right: 90px; bottom: -40px; height: 640px; }
+  .edge {
+    filter: drop-shadow(0 0 1.5px rgba(0,229,255,.9)) drop-shadow(0 0 18px rgba(0,229,255,.16));
+    -webkit-mask-image: linear-gradient(to bottom, #000 72%, transparent 90%);
+  }
+  .copy { position: absolute; left: 80px; top: 0; bottom: 0; width: 640px; display: flex; flex-direction: column; justify-content: center; }
+  .mark {
+    display: inline-grid; place-items: center; width: 56px; height: 56px; border-radius: 14px;
+    border: 1.5px solid rgba(0,229,255,.4); color: #00E5FF; font-family: "Sora"; font-weight: 700; font-size: 20px;
+    box-shadow: 0 0 24px -6px rgba(0,229,255,.5); margin-bottom: 34px;
+  }
+  .name { font-family: "Sora"; font-weight: 500; font-size: 32px; color: #A6A3B5; letter-spacing: -.01em; }
+  h1 { font-family: "Sora"; font-weight: 650; font-size: 70px; line-height: 1.04; letter-spacing: -.035em; margin: 14px 0 0; }
+  h1 span { color: #00E5FF; white-space: nowrap; }
+  .tag { margin-top: 34px; font-family: "JetBrains Mono"; font-size: 16px; letter-spacing: .18em; color: #A6A3B5; text-transform: uppercase; }
+</style>
+</head>
+<body>
+  <div class="haze"></div>
+  <div class="grid"></div>
+  <img class="edge" src="../assets/photo-cutout.webp" alt="">
+  <img class="photo" src="../assets/photo-cutout.webp" alt="">
+  <div class="copy">
+    <div class="mark">AR</div>
+    <div class="name">Akshit Rohilla</div>
+    <h1>Building software.<br>Learning to <span>secure it.</span></h1>
+    <div class="tag">Software Engineering · Berlin</div>
+  </div>
+</body>
+</html>
