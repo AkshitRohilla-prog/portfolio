@@ -149,7 +149,6 @@ Every push to the main branch redeploys automatically.
 
 ## Open items (search the code for `TODO`)
 - Optional: real screenshots at `assets/screenshots/student-portal.webp` or `n-queens.webp` (picked up automatically).
-- `TODO(review)`: "What I learned" wording on Road Issues Detection.
 
 ## Notes
 - Three.js was not needed: the hero network is a small Canvas 2D script (about 5 KB). It loads only when the hero is visible, on screens at least 768 px wide, with reduced motion off. It caps pixel density at 1.5 and pauses when hidden or scrolled away.
