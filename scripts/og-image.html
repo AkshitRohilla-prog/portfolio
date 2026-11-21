@@ -3,6 +3,9 @@
 <head>
 <meta charset="utf-8">
 <title>OG image source</title>
+<!-- 1200 x 630 social image. Everything that matters (photo, name, tagline) sits inside the
+     central 630 x 630 square (x 285 to 915), because WhatsApp crops previews to that square.
+     Only glow and decoration live outside it. No numbers or statistics. -->
 <style>
   @font-face { font-family: "Sora"; src: url("../assets/fonts/sora-latin-wght.woff2") format("woff2"); font-weight: 100 800; }
   @font-face { font-family: "DM Sans"; src: url("../assets/fonts/dm-sans-latin-wght.woff2") format("woff2"); font-weight: 100 1000; }
@@ -12,46 +15,62 @@
     width: 1200px; height: 630px; overflow: hidden; position: relative;
     background: #050505; color: #F2F2F5; font-family: "DM Sans", sans-serif;
   }
+  /* decoration (may be cropped) */
   .haze {
     position: absolute; inset: 0;
     background:
-      radial-gradient(420px 420px at 900px 330px, rgba(59, 10, 107, .95), transparent 70%),
-      radial-gradient(360px 300px at 120px 40px, rgba(59, 10, 107, .45), transparent 70%);
+      radial-gradient(380px 360px at 600px 250px, rgba(59, 10, 107, .95), transparent 70%),
+      radial-gradient(300px 260px at 110px 80px, rgba(59, 10, 107, .55), transparent 70%),
+      radial-gradient(300px 260px at 1110px 560px, rgba(59, 10, 107, .55), transparent 70%),
+      radial-gradient(220px 200px at 1080px 90px, rgba(0, 229, 255, .10), transparent 70%);
   }
   .grid {
-    position: absolute; left: 620px; right: -80px; bottom: -10px; height: 200px;
-    background-image: linear-gradient(rgba(0,229,255,.16) 1px, transparent 1px), linear-gradient(90deg, rgba(0,229,255,.16) 1px, transparent 1px);
-    background-size: 34px 34px;
-    transform: perspective(380px) rotateX(62deg); transform-origin: bottom center;
-    -webkit-mask-image: radial-gradient(70% 90% at 50% 100%, #000 30%, transparent 75%);
+    position: absolute; left: -100px; right: -100px; bottom: -20px; height: 220px;
+    background-image: linear-gradient(rgba(0,229,255,.14) 1px, transparent 1px), linear-gradient(90deg, rgba(0,229,255,.14) 1px, transparent 1px);
+    background-size: 40px 40px;
+    transform: perspective(420px) rotateX(64deg); transform-origin: bottom center;
+    -webkit-mask-image: radial-gradient(60% 100% at 50% 100%, #000 25%, transparent 75%);
   }
-  .photo, .edge { position: absolute; right: 90px; bottom: -40px; height: 640px; }
+  .net { position: absolute; inset: 0; }
+  .net line { stroke: rgba(150, 80, 230, .35); stroke-width: 1; }
+  .net circle { fill: rgba(0, 229, 255, .7); }
+  /* safe square: x 285 to 915 */
+  .safe { position: absolute; left: 285px; top: 0; width: 630px; height: 630px; }
+  .photo, .edge { position: absolute; left: 50%; top: 34px; height: 400px; transform: translateX(-50%); }
   .edge {
-    filter: drop-shadow(0 0 1.5px rgba(0,229,255,.9)) drop-shadow(0 0 18px rgba(0,229,255,.16));
+    filter: drop-shadow(0 0 1.5px rgba(0,229,255,.9)) drop-shadow(0 0 18px rgba(0,229,255,.18));
     -webkit-mask-image: linear-gradient(to bottom, #000 72%, transparent 90%);
   }
-  .copy { position: absolute; left: 80px; top: 0; bottom: 0; width: 640px; display: flex; flex-direction: column; justify-content: center; }
-  .mark {
-    display: inline-grid; place-items: center; width: 56px; height: 56px; border-radius: 14px;
-    border: 1.5px solid rgba(0,229,255,.4); color: #00E5FF; font-family: "Sora"; font-weight: 700; font-size: 20px;
-    box-shadow: 0 0 24px -6px rgba(0,229,255,.5); margin-bottom: 34px;
-  }
-  .name { font-family: "Sora"; font-weight: 500; font-size: 32px; color: #A6A3B5; letter-spacing: -.01em; }
-  h1 { font-family: "Sora"; font-weight: 650; font-size: 70px; line-height: 1.04; letter-spacing: -.035em; margin: 14px 0 0; }
-  h1 span { color: #00E5FF; white-space: nowrap; }
-  .tag { margin-top: 34px; font-family: "JetBrains Mono"; font-size: 16px; letter-spacing: .18em; color: #A6A3B5; text-transform: uppercase; }
+  .text { position: absolute; left: 0; right: 0; top: 436px; text-align: center; }
+  .name { font-family: "Sora"; font-weight: 650; font-size: 60px; letter-spacing: -.03em; line-height: 1; }
+  .tag { margin-top: 20px; font-size: 26px; color: #A6A3B5; }
+  .tag b { color: #00E5FF; font-weight: 600; }
 </style>
 </head>
 <body>
   <div class="haze"></div>
+  <svg class="net" viewBox="0 0 1200 630" aria-hidden="true">
+    <g>
+      <line x1="60" y1="140" x2="170" y2="230"/><line x1="170" y1="230" x2="120" y2="360"/><line x1="170" y1="230" x2="240" y2="320"/>
+      <line x1="120" y1="360" x2="210" y2="450"/><line x1="240" y1="320" x2="210" y2="450"/><line x1="60" y1="140" x2="200" y2="90"/>
+      <line x1="1140" y1="160" x2="1030" y2="240"/><line x1="1030" y1="240" x2="1090" y2="360"/><line x1="1030" y1="240" x2="960" y2="330"/>
+      <line x1="1090" y1="360" x2="990" y2="450"/><line x1="960" y1="330" x2="990" y2="450"/><line x1="1140" y1="160" x2="1000" y2="100"/>
+    </g>
+    <g>
+      <circle cx="60" cy="140" r="3"/><circle cx="170" cy="230" r="3.5"/><circle cx="120" cy="360" r="2.5"/><circle cx="240" cy="320" r="3"/>
+      <circle cx="210" cy="450" r="2.5"/><circle cx="200" cy="90" r="2"/>
+      <circle cx="1140" cy="160" r="3"/><circle cx="1030" cy="240" r="3.5"/><circle cx="1090" cy="360" r="2.5"/><circle cx="960" cy="330" r="3"/>
+      <circle cx="990" cy="450" r="2.5"/><circle cx="1000" cy="100" r="2"/>
+    </g>
+  </svg>
   <div class="grid"></div>
-  <img class="edge" src="../assets/photo-cutout.webp" alt="">
-  <img class="photo" src="../assets/photo-cutout.webp" alt="">
-  <div class="copy">
-    <div class="mark">AR</div>
-    <div class="name">Akshit Rohilla</div>
-    <h1>Building software.<br>Learning to <span>secure it.</span></h1>
-    <div class="tag">Software Engineering · Berlin</div>
+  <div class="safe">
+    <img class="edge" src="../assets/photo-cutout.webp" alt="">
+    <img class="photo" src="../assets/photo-cutout.webp" alt="">
+    <div class="text">
+      <div class="name">Akshit Rohilla</div>
+      <div class="tag">Software Engineering student <b>·</b> Berlin</div>
+    </div>
   </div>
 </body>
 </html>

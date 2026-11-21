@@ -98,7 +98,7 @@ The script wakes a sleeping Streamlit app, waits for pages to finish loading, an
 
 Check each image before using it: no personal data, no figures, no error banners.
 
-Social image (`assets/og-image.png`, from `scripts/og-image.html`) and PNG favicons (from `assets/favicon.svg`):
+Social image (`assets/og-image.png`, 1200 × 630, from `scripts/og-image.html`) and PNG favicons (from `assets/favicon.svg`). Keep the photo, name and tagline inside the central 630 × 630 square (x 285 to 915), because WhatsApp crops link previews to that square:
 
 ```bash
 node scripts/generate-images.js
