@@ -16,9 +16,12 @@ const TARGETS = [
   { name: 'road-issues', url: 'https://road-issues-detection-ml-project-9x3honm3mm9sznunnqxwr7.streamlit.app/', streamlit: true,
     viewport: { width: 1440, height: 1400 }, scale: 2, rect: { x: 336, y: 402, width: 1072, height: 670 } },
   { name: 'neighborly', url: 'https://akshitrohilla-prog.github.io/neighborly/' },
-  // Shiv: products area only. The About and Contact sections name the owner, and the shop
-  // photo in the top area shows tax IDs and a neighbouring sign, so both are left out.
-  { name: 'shiv-enterprises', url: 'https://shiv-enterprises-panipat.netlify.app/', clip: { selector: '#products', offsetY: 62 } }
+  // Shiv: top of the page, cropped to the header (logo and business name) and the hero text.
+  // Left out on purpose: the top strip (phone and WhatsApp numbers), the "Call +91..." button,
+  // and the shop photo with its caption (sign with numbers and tax IDs, neighbouring shop sign,
+  // street address). The About and Contact sections, which name the owner, are far below.
+  { name: 'shiv-enterprises', url: 'https://shiv-enterprises-panipat.netlify.app/',
+    viewport: { width: 1440, height: 900 }, scale: 2, rect: { x: 56, y: 42, width: 840, height: 525 } }
   // Student Community Portal is private: add assets/screenshots/student-portal.webp by hand.
 ];
 

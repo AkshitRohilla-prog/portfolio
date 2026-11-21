@@ -64,7 +64,7 @@ Every card follows the same order:
 5. **My contribution**
 6. tags
 7. **Technical detail**: expandable, for anything longer
-8. buttons: **Live demo** (`pbtn pbtn--demo`) and **GitHub** (`pbtn pbtn--code`)
+8. buttons: **Live demo** (`pbtn pbtn--demo`) and **GitHub** (`pbtn pbtn--code`). The Shiv Enterprises card says **Visit site**, because it is a real business website
 
 Keep the visible text short and put extra detail inside the `<details>` block.
 
@@ -119,7 +119,7 @@ node scripts/capture-screenshots.js
 
 The script wakes a sleeping Streamlit app, waits for pages to finish loading, and saves the page exactly as rendered, cropped where noted:
 - **Road Issues:** only the tabs, upload panel and damage classes. The app's header and sidebar show accuracy figures, which must stay off the portfolio.
-- **Shiv Enterprises:** only the products area. The About and Contact sections name the owner, and the shop photo shows tax IDs.
+- **Shiv Enterprises:** only the header (logo and business name) and the hero text. The crop leaves out the top strip with phone and WhatsApp numbers, the "Call" button, and the shop photo and caption (sign with numbers and tax IDs, a neighbouring shop sign, the street address). The owner's name and email are only in the About and Contact sections, far below the crop.
 
 Check each image before using it: no personal data, no figures, no error banners.
 
