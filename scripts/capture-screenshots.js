@@ -76,7 +76,7 @@ async function wakeStreamlit(page) {
   }
   await browser.close();
   if (failed.length) {
-    console.log(`\nNot captured: ${failed.join(', ')}. Their cards keep the built-in placeholder panel.`);
+    console.log(`\nNot captured: ${failed.join(', ')}. The existing images in assets/screenshots/ are left unchanged.`);
     process.exitCode = 1;
   }
 })();

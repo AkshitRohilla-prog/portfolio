@@ -1,5 +1,7 @@
 # Akshit Rohilla · portfolio
 
+**[Live site](https://akshit-rohilla.vercel.app/)**
+
 A one-page personal site: plain HTML, CSS and JavaScript with no build step. Fonts and GSAP are hosted with the site, so no visitor data goes to Google Fonts or a CDN.
 
 ```
@@ -11,7 +13,7 @@ js/hero3d.js          the subtle node network behind the photo (desktop only, la
 js/vendor/            gsap.min.js + ScrollTrigger.min.js (GSAP 3.12.5)
 assets/               photo, fonts, favicons, og-image.png, screenshots/
 scripts/              build-time helpers only (screenshots, social image, favicons)
-vercel.json           caching + security headers for Vercel
+vercel.json           caching + security headers, and the screenshots fallback rule, for Vercel
 ```
 
 ## Run it locally
@@ -42,7 +44,7 @@ If the new image has a different size, update `width`/`height` on the `<img>` ta
 ### Add a project screenshot
 Screenshots are 1440 × 900 WebP files in `assets/screenshots/`.
 
-**Student Community Portal and N-Queens:** just save the image as `assets/screenshots/student-portal.webp` or `assets/screenshots/n-queens.webp`. `js/main.js` checks for these files and turns the compact card into an image card automatically. No HTML edit is needed. Use only real screenshots.
+**Student Community Portal and N-Queens:** just save the image as `assets/screenshots/student-portal.webp` or `assets/screenshots/n-queens.webp`. `js/main.js` checks for these files and shows them automatically. The Portal's text card becomes an image card, and on N-Queens the real image replaces the board diagram. No HTML edit is needed. Use only real screenshots.
 
 On Vercel, missing files in that folder are routed to `assets/screenshots/missing.txt` (see `vercel.json`), so the check never logs a 404. On other hosts a missing image logs one harmless 404 in the console.
 
@@ -83,7 +85,7 @@ Each skill has two parts in the Skills section of `index.html`, joined by the sa
 </button>
 ...
 <ul class="skill-notes" role="list">
-  <li data-note-for="pytorch"><span class="skill-notes__name">PyTorch:</span> Road Issues Detection.</li>
+  <li data-note-for="pytorch"><span class="skill-notes__name">PyTorch:</span> Trained the Road Issues Detection models.</li>
 </ul>
 ```
 
@@ -156,8 +158,8 @@ Every push to the main branch redeploys automatically.
 ### Netlify
 **Add new site → Import from Git**, no build command, publish directory `.`. `404.html` is used automatically. `vercel.json` is ignored; add a `_headers` file if you want the same caching rules.
 
-## Open items (search the code for `TODO`)
-- Optional: real screenshots at `assets/screenshots/student-portal.webp` or `n-queens.webp` (picked up automatically).
+## Optional additions
+- Real screenshots at `assets/screenshots/student-portal.webp` or `n-queens.webp` (picked up automatically).
 
 ## Notes
 - Three.js was not needed: the hero network is a small Canvas 2D script (about 5 KB). It loads only when the hero is visible, on screens at least 768 px wide, with reduced motion off. It caps pixel density at 1.5 and pauses when hidden or scrolled away.
